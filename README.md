@@ -14,15 +14,15 @@ the private pilot, use the authenticated GitHub account that has access to
 this repository; do not replace the repository with a search result.
 
 ```text
-/goal Read the Codex installation guide in my authenticated GitHub repository `topviewai/plugins`, install TopviewAI, complete OAuth, and set up a new task for me.
+/goal Read https://github.com/topviewai/plugins/blob/main/docs/codex.md to install TopviewAI, complete OAuth, and set up a new task for me.
 ```
 
 ```text
-Read the Cursor installation guide in my authenticated GitHub repository `topviewai/plugins`, install TopviewAI, complete OAuth, and set up a new task for me.
+Read https://github.com/topviewai/plugins/blob/main/docs/cursor.md to install TopviewAI, complete OAuth, and set up a new task for me.
 ```
 
 ```text
-/goal Read the Claude installation guide in my authenticated GitHub repository `topviewai/plugins`, install TopviewAI, complete OAuth, and set up a new task for me.
+/goal Read https://github.com/topviewai/plugins/blob/main/docs/claude.md to install TopviewAI, complete OAuth, and set up a new task for me.
 ```
 
 Read the shared [installation contract](docs/installation-contract.md) before
