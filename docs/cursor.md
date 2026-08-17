@@ -28,7 +28,7 @@ installation prompt again.
 
    Inspect `plugins/topview/.cursor-plugin/plugin.json` and record its version.
    Do not use a symlink for the final plugin directory.
-2. Copy only `plugins/topview/` into `~/.cursor/plugins/local/topview/`, keeping
+2. Copy only `plugins/topview/` into `~/.cursor/plugins/local/topviewai/`, keeping
    any existing installation as a dated backup.
 3. Download the approved Cursor release metadata at `https://raw.githubusercontent.com/topviewai/plugins/main/releases/cursor/latest.json`. Read
    `downloadUrl`, `sha256`, and `sizeBytes`, then download that VSIX to a
@@ -42,7 +42,7 @@ installation prompt again.
    ```
 
 5. Confirm the list contains `topview.topview-canvas-side-panel` at the same
-   version as `~/.cursor/plugins/local/topview/.cursor-plugin/plugin.json`.
+   version as `~/.cursor/plugins/local/topviewai/.cursor-plugin/plugin.json`.
 
 At this point installation is complete. Return exactly this handoff and stop; do not
 attempt a Topview tool call in the current task:
@@ -58,7 +58,7 @@ start your normal Topview task. Do not paste the installation prompt again.
 
 1. In the **same Cursor window/workspace** where Topview will be used, open
    Cursor Settings and its MCP/Tools list. Find **TopviewAI** / `topview`.
-   Cursor can display the internal identifier `plugin-topview-topview`; that is
+   Cursor can display the internal identifier `plugin-topviewai-topview`; that is
    the expected Topview MCP server.
 2. Its initial state should be **Needs authentication**. Click
    **Authenticate** in Cursor. This is a user action: the Agent must not merely
@@ -75,15 +75,18 @@ start your normal Topview task. Do not paste the installation prompt again.
    `topview_check_plugin_update`. This is a normal use task, not a second
    installation prompt. If Topview does not appear in Available Tools, report
    the MCP status; do not retry installation in a loop.
-4. After the read-only request succeeds, open a Canvas and choose **Open in side panel**.
-   The Canvas opens in the right editor group, not the left Activity Bar
-   sidebar.
+4. After the read-only request succeeds, use **IDE mode** if you want to open
+   a Canvas in the right editor group with **Open in side panel**. The Canvas
+   opens in the editor group, not the left Activity Bar sidebar. In **Agent
+   mode**, a Canvas can render only in the current chat conversation; Agent
+   mode cannot open it in the IDE side panel. Switch to IDE mode before opening
+   the Canvas when the side-panel experience is required.
 
 ## Update or reauthorize
 
 - **Update:** repeat the installation flow with the matching repository files
   and verified VSIX, then restart and authenticate once. Replacing only
-  `~/.cursor/plugins/local/topview/` and force-installing the matching Topview
+  `~/.cursor/plugins/local/topviewai/` and force-installing the matching Topview
   VSIX is the supported Topview reset; it does not require clearing Cursor
   caches.
 - **Reauthorize:** in Cursor Settings, open the Topview MCP entry and use

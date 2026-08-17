@@ -14,11 +14,17 @@ claude plugin marketplace add https://github.com/topviewai/plugins.git --scope u
 claude plugin install topview@topview --scope user
 ```
 
-Reload plugins if Claude Code asks for it. If it asks for an unsandboxed retry
-to write user settings, stop and let the user approve or reject that security
-prompt. Open `/mcp`, choose `plugin:topview:topview`, and select
-**Authenticate** when it shows **Needs authentication**. Complete browser OAuth
-and return only after Claude Code shows the connection as authenticated.
+Reload plugins if Claude Code asks for it. The plugin intentionally installs
+skills only, so register the same production TopviewAI MCP once at user scope:
+
+```bash
+claude mcp add --transport http --scope user topview https://mcp.topview.ai
+```
+
+If it asks for an unsandboxed retry to write user settings, stop and let the
+user approve or reject that security prompt. Open `/mcp`, choose `topview`, and
+select **Authenticate** when it shows **Needs authentication**. Complete browser
+OAuth and return only after Claude Code shows the connection as authenticated.
 
 Start a new session, then confirm the Topview MCP/skills are visible and make
 one safe, read-only Topview request. Do not use paid generation merely as an

@@ -47,6 +47,10 @@ workspace, Cursor loads the MCP automatically. The user authorizes TopviewAI
 once in Cursor Settings, then starts their normal Topview task. They do **not**
 paste the installation prompt again.
 
+Canvas rendering depends on the Cursor host mode, not on installation or OAuth:
+use **IDE mode** to open a Canvas in the right editor-group side panel. In
+**Agent mode**, Canvas output is available only in the chat conversation.
+
 ## Failure handling
 
 Stop at the failed step and report its unmodified error plus the platform,

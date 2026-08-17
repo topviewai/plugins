@@ -3,7 +3,7 @@
   "name": "topview",
   "displayName": "TopviewAI",
   "version": "1.0.0",
-  "description": "Use Topview Canvas, Canvas Agent Workflows, and Marketing Studio through one TopviewAI plugin and MCP connection.",
+  "description": "Use Topview Canvas, Canvas Agent Workflows, and Marketing Studio with the TopviewAI skills.",
   "author": {
     "name": "Topview"
   },
@@ -18,6 +18,5 @@
     "claude",
     "mcp"
   ],
-  "skills": "./skills/",
-  "mcpServers": "./.mcp.claude.json"
+  "skills": "./skills/"
 }
