@@ -3,8 +3,8 @@
   "client": "claude",
   "version": "1.0.0",
   "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-plugin-1.0.0.plugin",
-  "sha256": "cf39da7324f3c92ccd91143bda0131678de7f3aa6dcd1b8314277e2b1275e204",
-  "sizeBytes": 131679,
-  "publishedAt": "2026-08-17T07:45:45Z",
-  "releaseNotes": "Initial public TopviewAI plugin release with GitHub Release assets."
+  "sha256": "9ff93ab328f9e461c9c9ff20f063d67952d7c168faf07275b9d93d92f585990e",
+  "sizeBytes": 130016,
+  "publishedAt": "2026-08-17T12:49:25Z",
+  "releaseNotes": "Repackaged 1.0.0 Claude plugin: skills use the single production Custom Connector instead of declaring a duplicate plugin connector."
 }
