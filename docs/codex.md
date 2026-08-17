@@ -1,27 +1,46 @@
 # Install TopviewAI in Codex
 
-Use a current Codex Desktop or CLI installation with plugin support. The only
-approved repository is `https://github.com/topviewai/plugins`. During the private pilot, an
+Read the [shared installation contract](installation-contract.md) first. Use a
+current **local** Codex Desktop or CLI installation with plugin support. The
+only approved repository is `https://github.com/topviewai/plugins.git`. During the private pilot, an
 anonymous browser or web fetch can return 404 even when the local GitHub account
 has access. In that case, use the authenticated `gh`/git credentials already
 configured on the machine; never search for or install a replacement plugin.
 
-First remove any existing Topview plugin and Marketplace registration if they
-exist. Then run:
+## Install and authorize
+
+Locate the Codex executable used by the local desktop app and assign its full
+path to `CODEX`. Do not assume an unrelated `codex` found on `PATH` is the
+desktop host. Confirm `"$CODEX" --version` first.
+
+If `"$CODEX" plugin list --json` shows an earlier `topview@topview`, remove
+that exact plugin first. If `"$CODEX" plugin marketplace list` shows an old
+Topview marketplace source, remove only that exact marketplace registration.
+Do not delete Codex-wide caches or configuration directories.
+
+Then run these commands in order:
 
 ```bash
-codex plugin marketplace add https://github.com/topviewai/plugins --ref main --json
-codex plugin add topview@topview --json
+"$CODEX" plugin marketplace add https://github.com/topviewai/plugins.git --ref main --json
+"$CODEX" plugin add topview@topview --json
+"$CODEX" mcp login topview
 ```
 
-`topview@topview` has an install-time authentication policy. Complete the
-Topview OAuth browser flow **in this installation task**: open the authorization
-page when Codex provides it, wait for the user to approve it, and confirm that
-Codex reports the authorization has completed. Do not say that installation is
-complete, ask for a restart, or substitute a different plugin if OAuth did not
-start or did not finish; report that exact failure instead.
+The final command is mandatory: it opens the Topview OAuth flow. Complete it
+**in this installation task** and wait for Codex to report a successful login.
+Do not say that installation is complete, ask for a restart, or substitute a
+different plugin if OAuth did not start or did not finish; report that exact
+failure instead.
 
-Only after OAuth succeeds, ask the user to fully restart Codex and create a new
-task. In that new task, verify that the `topview` MCP and TopviewAI skills are
-available. Do not copy plugin files into Codex configuration directories
-manually.
+Verify the installed source and authenticated MCP before restarting:
+
+```bash
+"$CODEX" plugin list --json
+"$CODEX" plugin marketplace list
+"$CODEX" mcp get topview --json
+```
+
+Only after all three checks and OAuth succeed, ask the user to fully restart
+Codex and create a new task. In that new task, verify that the `topview` MCP
+and TopviewAI skills are available with one safe, read-only request. Do not
+copy plugin files into Codex configuration directories manually.

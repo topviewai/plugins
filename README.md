@@ -7,23 +7,28 @@ are intentionally excluded.
 
 ## Install with one prompt
 
-Paste the matching sentence into your host:
+Paste the matching sentence into the **local desktop application** you intend
+to use. It directs the agent to the full installation guide, where it must
+install, complete OAuth, verify the result, and then open a fresh task. During
+the private pilot, use the authenticated GitHub account that has access to
+this repository; do not replace the repository with a search result.
 
 ```text
 /goal Read the Codex installation guide in my authenticated GitHub repository `topviewai/plugins`, install TopviewAI, complete OAuth, and set up a new task for me.
 ```
 
 ```text
-Read https://github.com/topviewai/plugins/blob/main/docs/cursor.md to install and use the TopviewAI plugin.
+Read the Cursor installation guide in my authenticated GitHub repository `topviewai/plugins`, install TopviewAI, complete OAuth, and set up a new task for me.
 ```
 
 ```text
-/goal Read https://github.com/topviewai/plugins/blob/main/docs/claude.md to install and use the TopviewAI plugin.
+/goal Read the Claude installation guide in my authenticated GitHub repository `topviewai/plugins`, install TopviewAI, complete OAuth, and set up a new task for me.
 ```
 
-Claude's guide selects the correct flow for Claude Code or Claude Desktop /
-Cowork. Do not use Claude Code terminal commands in Claude Desktop, and do not
-upload a `.plugin` file to Claude Code.
+Read the shared [installation contract](docs/installation-contract.md) before
+using any platform guide. Claude's guide selects the correct flow for Claude
+Code or Claude Desktop / Cowork. Do not use Claude Code terminal commands in
+Claude Desktop, and do not upload a `.plugin` file to Claude Code.
 
 ## Security
 
