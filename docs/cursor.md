@@ -6,6 +6,21 @@ from a real local directory. Its Canvas right-editor integration is a separately
 packaged `topview.topview-canvas-side-panel` VSIX from the matching GitHub
 Release.
 
+## Two-task protocol (mandatory)
+
+A complete quit makes the current Agent task unavailable, and Cursor loads the
+local plugin's MCP only after it restarts. Therefore **do not try to start
+OAuth, inspect Available Tools, or wait for authorization in the installation
+task**. This guide is intentionally repeatable:
+
+- **Task 1 — install:** complete the version-checked plugin and VSIX steps
+  below, then stop with the restart handoff.
+- **Task 2 — authorize and verify:** after the user fully quits and reopens
+  Cursor in the workspace where they will use Topview, paste this same short
+  installation prompt again. If Task 1's versions are already installed, skip
+  directly to [authorize and verify](#authorize-and-verify-after-restart);
+  do not reinstall them.
+
 ## Install the matching plugin and extension
 
 1. Clone the approved repository to a temporary directory. During the private
@@ -33,16 +48,37 @@ Release.
 
 5. Confirm the list contains `topview.topview-canvas-side-panel` at the same
    version as `~/.cursor/plugins/local/topview/.cursor-plugin/plugin.json`.
-6. Save work, fully quit Cursor, reopen it, and start a new Agent session. Make
-   one safe, read-only Topview request. If Cursor asks to authenticate the
-   Topview MCP, choose its OAuth action, complete the browser flow, then retry
-   the same request. Do not count an unanswered authentication prompt as a
-   successful install.
-7. After the request succeeds, open a Canvas and choose **Open in side panel**.
+
+At this point Task 1 is complete. Return exactly this handoff and stop; do not
+attempt a Topview tool call in the current task:
+
+```text
+ACTION REQUIRED — RESTART CURSOR
+Save your work and fully quit Cursor. Reopen the workspace where you will use
+TopviewAI, create a new Agent task, and paste the same Cursor installation
+prompt again to complete OAuth and verification.
+```
+
+## Authorize and verify after restart
+
+1. In the **same Cursor window/workspace** where Topview will be used, open
+   Cursor Settings and its MCP/Tools list. Find **TopviewAI** / `topview`.
+   Cursor can display the internal identifier `plugin-topview-topview`; that is
+   the expected Topview MCP server.
+2. Its initial state should be **Needs authentication**. Click
+   **Authenticate** in Cursor. This is a user action: the Agent must not merely
+   say that it started OAuth. Complete the browser consent flow and return to
+   the same Cursor window.
+3. Confirm the MCP status changes to **Connected**. Only then allow the new
+   Agent task to use a safe, read-only Topview request such as
+   `topview_check_plugin_update`. If Topview does not appear in the new task's
+   Available Tools, stop and report the MCP status; do not claim authorization
+   or retry installation in a loop.
+4. After the read-only request succeeds, open a Canvas and choose **Open in side panel**.
    The Canvas opens in the right editor group, not the left Activity Bar
    sidebar.
 
 Never manually delete `~/.cursor/extensions/topview.topview-canvas-side-panel-*`,
 edit `extensions.json`, or clear Cursor global caches. If the extension or
-OAuth prompt is absent after a full restart, stop and report the exact verified
-artifact version and the host-visible failure.
+Topview MCP entry is absent after a full restart, stop and report the exact
+verified artifact version, Cursor workspace, and host-visible failure.

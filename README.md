@@ -18,7 +18,7 @@ this repository; do not replace the repository with a search result.
 ```
 
 ```text
-Read https://github.com/topviewai/plugins/blob/main/docs/cursor.md to install TopviewAI, complete OAuth, and set up a new task for me.
+Read https://github.com/topviewai/plugins/blob/main/docs/cursor.md to install TopviewAI and follow its two-task restart and OAuth handoff exactly.
 ```
 
 ```text

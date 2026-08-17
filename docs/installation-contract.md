@@ -36,6 +36,16 @@ An installation is complete only when all applicable stages have succeeded:
    registered Topview MCP/skills are visible. Do not submit paid generation
    work merely to test installation.
 
+### Cursor exception: the restart splits the flow
+
+For Cursor, installation and authorization are intentionally two tasks. The
+initial task installs the local plugin and VSIX, then must stop with the restart
+handoff. It must **not** claim that it started OAuth or wait for authorization:
+the current Cursor process has not loaded the newly installed plugin. After the
+user fully quits and reopens Cursor in the intended workspace, they paste the
+same short prompt in a new task. That second task performs only the Cursor MCP
+status, OAuth, and read-only verification steps.
+
 ## Failure handling
 
 Stop at the failed step and report its unmodified error plus the platform,
