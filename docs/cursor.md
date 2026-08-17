@@ -69,6 +69,24 @@ prompt again to complete OAuth and verification.
    **Authenticate** in Cursor. This is a user action: the Agent must not merely
    say that it started OAuth. Complete the browser consent flow and return to
    the same Cursor window.
+
+   When an Agent coordinates this step, it must show this handoff immediately
+   after it starts the host OAuth flow; it must not silently poll or keep
+   retrying while user consent is pending:
+
+   ```text
+   ACTION REQUIRED — AUTHORIZE TOPVIEW
+   In Cursor Settings > MCP/Tools, open TopviewAI and click Authenticate.
+   Complete the approval in the browser that Cursor opens, then return to this
+   Cursor window. Do not share credentials or an OAuth code in chat.
+   ```
+
+   Cursor's local callback is short-lived. If its MCP status has not changed
+   to **Connected** within one callback window (about two minutes), the Agent
+   must stop and report **Needs authentication**. It must not loop, reinstall,
+   or claim that OAuth was completed. After completing the browser approval,
+   paste the same short prompt once more to resume verification if the original
+   Agent task has ended.
 3. Confirm the MCP status changes to **Connected**. Only then allow the new
    Agent task to use a safe, read-only Topview request such as
    `topview_check_plugin_update`. If Topview does not appear in the new task's
