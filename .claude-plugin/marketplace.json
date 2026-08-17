@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "topview",
+  "description": "TopviewAI plugins for Claude Desktop, Cowork, and Claude Code.",
+  "owner": {
+    "name": "Topview"
+  },
+  "plugins": [
+    {
+      "name": "topview",
+      "description": "Use Topview Canvas, Canvas Agent Workflows, and Marketing Studio through one TopviewAI plugin and MCP connection.",
+      "author": {
+        "name": "Topview"
+      },
+      "category": "productivity",
+      "source": "./plugins/topview",
+      "homepage": "https://www.topview.ai/home"
+    }
+  ]
+}

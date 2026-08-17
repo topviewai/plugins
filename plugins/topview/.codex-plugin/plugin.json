@@ -1,0 +1,43 @@
+{
+  "name": "topview",
+  "version": "1.0.0",
+  "description": "Use Topview Canvas, Canvas Agent Workflows, and Marketing Studio through one TopviewAI plugin and MCP connection.",
+  "author": {
+    "name": "Topview"
+  },
+  "repository": "https://github.com/topviewai/plugins",
+  "homepage": "https://www.topview.ai",
+  "keywords": [
+    "topview",
+    "topviewai",
+    "canvas",
+    "marketing",
+    "ecommerce",
+    "codex",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "TopviewAI",
+    "shortDescription": "Use Topview Canvas, creation workflows, and Marketing Studio in Codex.",
+    "longDescription": "Install TopviewAI once to open and operate Topview Canvas, run Canvas Agent Workflows for end-to-end generation, and use Marketing Studio playbooks for ecommerce, content, creator, and campaign research. All skills share one remote Topview MCP connection.",
+    "developerName": "Topview",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Open and operate Topview Canvas.",
+      "Use Canvas Agent Workflows to remake a 15s product video end to end without asking me to reply continue.",
+      "Research a market and build a campaign plan with Marketing Studio.",
+      "Analyze a product and create a marketing execution plan."
+    ],
+    "brandColor": "#6366F1",
+    "websiteURL": "https://www.topview.ai/home",
+    "composerIcon": "./assets/topview-icon.png",
+    "logo": "./assets/topview-icon.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

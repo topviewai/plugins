@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "snapshot": {
+    "kind": "repository-playbook-snapshot",
+    "sourceRepository": "topview/marketing-studio",
+    "sourceRef": "4d49b9a8585ebd76a469cb58805438f38a7b716e",
+    "publicationVerified": false,
+    "expectedCount": 29,
+    "sourceFiles": [
+      "backend/sql/V030__ecommerce_ops_c1_agents.sql",
+      "backend/sql/V031__ecommerce_ops_mcp_skill_optimizations.sql",
+      "backend/sql/V041__modash_discovery_mcp.sql",
+      "backend/sql/V042__rename_modash_mcp_to_creator_discovery.sql",
+      "backend/sql/V060__shopee_ops_c1_agent.sql"
+    ]
+  },
+  "skills": [
+    {
+      "code": "ecom-routing-policy",
+      "name": "Ecommerce Routing Policy",
+      "platform": "shared",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["routing", "ecommerce", "data source", "delegation"],
+      "reference": "references/ecommerce.md",
+      "requires": []
+    },
+    {
+      "code": "ecom-output-spec",
+      "name": "Ecommerce Output Spec",
+      "platform": "shared",
+      "category": "ecommerce",
+      "version": "1.0.1",
+      "keywords": ["report", "output", "deliverable", "dashboard", "spreadsheet"],
+      "reference": "references/ecommerce.md",
+      "requires": []
+    },
+    {
+      "code": "ecom-daily-review",
+      "name": "Ecommerce Daily Review",
+      "platform": "shared",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["daily review", "weekly review", "operations", "kpi", "action plan"],
+      "reference": "references/ecommerce.md",
+      "requires": ["store-performance-data"]
+    },
+    {
+      "code": "amazon-market-analysis",
+      "name": "Amazon Market Analysis",
+      "platform": "amazon",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["amazon", "market", "category", "opportunity", "competition"],
+      "reference": "references/amazon.md",
+      "requires": ["amazon-market-data"]
+    },
+    {
+      "code": "amazon-product-analysis",
+      "name": "Amazon Product Analysis",
+      "platform": "amazon",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["amazon", "product", "asin", "sku", "competitor", "profit"],
+      "reference": "references/amazon.md",
+      "requires": ["amazon-product-data"]
+    },
+    {
+      "code": "amazon-listing-optimization",
+      "name": "Amazon Listing Optimization",
+      "platform": "amazon",
+      "category": "content",
+      "version": "1.0.0",
+      "keywords": ["amazon", "listing", "title", "bullet", "a+", "conversion"],
+      "reference": "references/amazon.md",
+      "requires": ["amazon-product-evidence"]
+    },
+    {
+      "code": "amazon-keyword-traffic-analysis",
+      "name": "Amazon Keyword Traffic Analysis",
+      "platform": "amazon",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["amazon", "keyword", "traffic", "aba", "ppc", "search term"],
+      "reference": "references/amazon.md",
+      "requires": ["amazon-keyword-data"]
+    },
+    {
+      "code": "amazon-review-optimization",
+      "name": "Amazon Review Optimization",
+      "platform": "amazon",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["amazon", "review", "voc", "pain point", "qa", "support"],
+      "reference": "references/amazon.md",
+      "requires": ["amazon-review-data"]
+    },
+    {
+      "code": "amazon-trend-risk-monitor",
+      "name": "Amazon Trend Risk Monitor",
+      "platform": "amazon",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["amazon", "trend", "risk", "bsr", "seasonality", "trademark"],
+      "reference": "references/amazon.md",
+      "requires": ["amazon-trend-data"]
+    },
+    {
+      "code": "tiktok-market-trend-analysis",
+      "name": "TikTok Market Trend Analysis",
+      "platform": "tiktok-shop",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["tiktok shop", "market", "category", "gmv", "trend", "region"],
+      "reference": "references/tiktok-shop.md",
+      "requires": ["tiktok-shop-market-data"]
+    },
+    {
+      "code": "tiktok-product-selection",
+      "name": "TikTok Product Selection",
+      "platform": "tiktok-shop",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["tiktok shop", "product selection", "viral product", "score", "commission"],
+      "reference": "references/tiktok-shop.md",
+      "requires": ["tiktok-shop-product-data"]
+    },
+    {
+      "code": "tiktok-material-breakdown",
+      "name": "TikTok Material Breakdown",
+      "platform": "tiktok-shop",
+      "category": "content",
+      "version": "1.0.0",
+      "keywords": ["tiktok", "video", "creative", "material", "hook", "cta", "breakdown"],
+      "reference": "references/tiktok-shop.md",
+      "requires": ["tiktok-video-evidence"]
+    },
+    {
+      "code": "tiktok-script-creation",
+      "name": "TikTok Script Creation",
+      "platform": "tiktok-shop",
+      "category": "content",
+      "version": "1.0.0",
+      "keywords": ["tiktok", "script", "ugc", "hook", "creator brief", "live talk track"],
+      "reference": "references/tiktok-shop.md",
+      "requires": ["product-evidence"]
+    },
+    {
+      "code": "tiktok-content-production",
+      "name": "TikTok Content Production",
+      "platform": "tiktok-shop",
+      "category": "content",
+      "version": "1.0.0",
+      "keywords": ["tiktok", "content calendar", "production", "asset", "publishing"],
+      "reference": "references/tiktok-shop.md",
+      "requires": ["product-evidence"]
+    },
+    {
+      "code": "tiktok-affiliate-ops",
+      "name": "TikTok Affiliate Ops",
+      "platform": "tiktok-shop",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["tiktok shop", "affiliate", "creator", "sample", "commission", "roi"],
+      "reference": "references/tiktok-shop.md",
+      "requires": ["tiktok-shop-creator-data"]
+    },
+    {
+      "code": "tiktok-ads-live-ops",
+      "name": "TikTok Ads Live Ops",
+      "platform": "tiktok-shop",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["tiktok shop", "ads", "live", "scale", "budget", "conversion"],
+      "reference": "references/tiktok-shop.md",
+      "requires": ["tiktok-shop-performance-data"]
+    },
+    {
+      "code": "influencer-routing-policy",
+      "name": "Influencer Routing Policy",
+      "platform": "shared",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["influencer", "creator", "routing", "youtube", "instagram", "credits"],
+      "reference": "references/influencer.md",
+      "requires": []
+    },
+    {
+      "code": "influencer-output-spec",
+      "name": "Influencer Output Spec",
+      "platform": "shared",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["influencer", "creator shortlist", "report", "audience", "deliverable"],
+      "reference": "references/influencer.md",
+      "requires": []
+    },
+    {
+      "code": "youtube-creator-discovery",
+      "name": "YouTube Creator Discovery",
+      "platform": "youtube",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["youtube", "creator", "discovery", "search", "vetting", "kol"],
+      "reference": "references/influencer.md",
+      "requires": ["youtube-creator-data"]
+    },
+    {
+      "code": "youtube-audience-analysis",
+      "name": "YouTube Audience Analysis",
+      "platform": "youtube",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["youtube", "audience", "demographics", "credibility", "overlap"],
+      "reference": "references/influencer.md",
+      "requires": ["youtube-audience-data"]
+    },
+    {
+      "code": "youtube-outreach-campaign",
+      "name": "YouTube Outreach Campaign",
+      "platform": "youtube",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["youtube", "outreach", "campaign", "brief", "creator", "rate"],
+      "reference": "references/influencer.md",
+      "requires": ["youtube-creator-shortlist"]
+    },
+    {
+      "code": "instagram-creator-discovery",
+      "name": "Instagram Creator Discovery",
+      "platform": "instagram",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["instagram", "creator", "discovery", "search", "reels", "vetting"],
+      "reference": "references/influencer.md",
+      "requires": ["instagram-creator-data"]
+    },
+    {
+      "code": "instagram-audience-analysis",
+      "name": "Instagram Audience Analysis",
+      "platform": "instagram",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["instagram", "audience", "demographics", "credibility", "fake follower", "overlap"],
+      "reference": "references/influencer.md",
+      "requires": ["instagram-audience-data"]
+    },
+    {
+      "code": "instagram-outreach-campaign",
+      "name": "Instagram Outreach Campaign",
+      "platform": "instagram",
+      "category": "influencer",
+      "version": "1.0.0",
+      "keywords": ["instagram", "outreach", "campaign", "brief", "reel", "story"],
+      "reference": "references/influencer.md",
+      "requires": ["instagram-creator-shortlist"]
+    },
+    {
+      "code": "shopee-market-analysis",
+      "name": "Shopee Market Analysis",
+      "platform": "shopee",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["shopee", "market", "category", "site", "price band", "opportunity"],
+      "reference": "references/shopee.md",
+      "requires": ["shopee-market-data"]
+    },
+    {
+      "code": "shopee-product-analysis",
+      "name": "Shopee Product Analysis",
+      "platform": "shopee",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["shopee", "product", "item", "trend", "ranking", "hot word"],
+      "reference": "references/shopee.md",
+      "requires": ["shopee-item-data"]
+    },
+    {
+      "code": "shopee-shop-analysis",
+      "name": "Shopee Shop Analysis",
+      "platform": "shopee",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["shopee", "shop", "seller", "assortment", "ranking", "brand mix"],
+      "reference": "references/shopee.md",
+      "requires": ["shopee-shop-data"]
+    },
+    {
+      "code": "shopee-brand-analysis",
+      "name": "Shopee Brand Analysis",
+      "platform": "shopee",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["shopee", "brand", "ranking", "trend", "assortment", "distribution"],
+      "reference": "references/shopee.md",
+      "requires": ["shopee-brand-data"]
+    },
+    {
+      "code": "shopee-keyword-analysis",
+      "name": "Shopee Keyword Analysis",
+      "platform": "shopee",
+      "category": "ecommerce",
+      "version": "1.0.0",
+      "keywords": ["shopee", "keyword", "hot search", "trend", "related item"],
+      "reference": "references/shopee.md",
+      "requires": ["shopee-keyword-data"]
+    }
+  ]
+}

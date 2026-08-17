@@ -1,0 +1,20 @@
+{
+  "name": "topview",
+  "owner": {
+    "name": "Topview"
+  },
+  "metadata": {
+    "description": "Topview plugins for Cursor.",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "topview",
+      "source": "topview",
+      "description": "Use Topview Canvas and Marketing Studio through one TopviewAI plugin and MCP connection.",
+      "minClientVersions": {
+        "cursor": "3.15.6"
+      }
+    }
+  ]
+}

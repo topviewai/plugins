@@ -1,0 +1,10 @@
+{
+  "topview": {
+    "type": "http",
+    "url": "https://mcp.topview.ai/claude",
+    "headers": {
+      "X-Topview-Plugin-Version": "1.0.0",
+      "X-Topview-Plugin-Client": "claude"
+    }
+  }
+}

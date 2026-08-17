@@ -1,0 +1,13 @@
+interface:
+  display_name: "Marketing Studio"
+  short_description: "Run Topview marketing research and content workflows"
+  default_prompt: "Use $marketing-studio to plan and execute a marketing workflow."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "topview"
+      description: "Unified Topview MCP server for Marketing Studio data and actions"
+      transport: "streamable_http"
+      url: "https://mcp.topview.ai/codex"
+policy:
+  allow_implicit_invocation: true

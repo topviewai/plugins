@@ -1,0 +1,13 @@
+interface:
+  display_name: "Canvas Agent Workflows"
+  short_description: "Run end-to-end Canvas creation workflows"
+  default_prompt: "Use $canvas-agent-workflows to complete a Canvas creation goal without asking me to reply continue."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "topview"
+      description: "Unified Topview MCP for Canvas state, V2 generation, Timeline, and uploads"
+      transport: "streamable_http"
+      url: "https://mcp.topview.ai/codex"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "topview",
+  "displayName": "TopviewAI",
+  "version": "1.0.0",
+  "description": "Use Topview Canvas, Canvas Agent Workflows, and Marketing Studio through one TopviewAI plugin and MCP connection.",
+  "author": {
+    "name": "Topview"
+  },
+  "repository": "https://github.com/topviewai/plugins",
+  "homepage": "https://www.topview.ai",
+  "keywords": [
+    "topview",
+    "topviewai",
+    "canvas",
+    "marketing",
+    "ecommerce",
+    "claude",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.claude.json"
+}

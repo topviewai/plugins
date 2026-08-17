@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "agentEfficiency": {
+    "revisionPolicy": "observational_response_only",
+    "getStateBeforeEveryWrite": false,
+    "getMcpToolsPerSession": "once_per_server_tool_schema",
+    "capabilitiesPrefer": {
+      "include": [],
+      "filters": [
+        "taskType",
+        "taskTypes",
+        "models"
+      ]
+    },
+    "identityFields": [
+      "nodeId",
+      "shortCode?",
+      "mentionToken?",
+      "consistencyStatus"
+    ],
+    "forbiddenAgentFields": [
+      "assetId",
+      "canvas_asset"
+    ],
+    "parallelSameCanvasWrites": false,
+    "parallelSameTargetWrites": false,
+    "preferParallelIndependentTools": true,
+    "waitAllParallelWave": true,
+    "maxReturnedRevisionAfterWave": false,
+    "requirePreplannedGeometryForParallelCreate": true,
+    "sameCanvasRefreshSerial": false,
+    "parallelRefreshAfterSerialSubmit": true,
+    "slimRefreshByDefault": true,
+    "stateFilters": true,
+    "backgroundGenerationConcurrent": true,
+    "forbidExpectedRevision": true,
+    "forbidFieldsRevisionFilter": true,
+    "forbidFieldsEnvironmentFilter": true,
+    "forbidMaxRevisionCursor": true,
+    "stateProjectionFields": [
+      "nodes.basic",
+      "nodes.geometry",
+      "nodes.identity",
+      "nodes.generation",
+      "nodes.hierarchy",
+      "webUrl"
+    ],
+    "observationalRevision": true,
+    "paidGenerationApprovalMode": "ask_on_first_submit",
+    "paidGenerationApprovalModes": [
+      "confirm_each_submit",
+      "autonomous"
+    ],
+    "forbidPaidSubmitBeforeApprovalMode": true
+  },
+  "scenarios": {
+    "sceneStoryboard": {
+      "arguments": {
+        "canvasId": "<canvasId>",
+        "capabilityVersion": "sha256:…",
+        "mediaType": "image",
+        "taskType": "storyboard_to_video",
+        "generationKind": "scene_storyboard",
+        "sceneNodeId": "node_scene_…",
+        "model": "<capabilities[i].model>",
+        "parameters": {
+          "aspectRatio": "16:9"
+        },
+        "commandId": "cmd_scene_storyboard_<unique>"
+      },
+      "forbiddenArguments": [
+        "prompt",
+        "inputs",
+        "parentId",
+        "assetId",
+        "expectedRevision"
+      ]
+    }
+  },
+  "tools": {
+    "get_topview_canvas_generation_capabilities": {
+      "arguments": {
+        "canvasId": "<canvasId>",
+        "mediaType": "video",
+        "taskType": "image_to_video",
+        "include": []
+      },
+      "requiredResponseFields": [
+        "capabilityVersion",
+        "capabilities"
+      ],
+      "summaryFields": [
+        "requiredParameters",
+        "defaults",
+        "parameterEnums",
+        "inputRoles"
+      ]
+    },
+    "submit_topview_canvas_generation_task": {
+      "arguments": {
+        "canvasId": "<canvasId>",
+        "capabilityVersion": "sha256:…",
+        "mediaType": "video",
+        "taskType": "image_to_video",
+        "model": "<capabilities[i].model>",
+        "prompt": "Animate <<@img_1>> with a gentle camera push-in.",
+        "parameters": {
+          "resolution": 480,
+          "duration": 5
+        },
+        "inputs": [
+          {
+            "role": "start_frame",
+            "source": {
+              "kind": "canvas_node",
+              "nodeId": "node_gen_…"
+            },
+            "mention": {
+              "shortCode": "img_1"
+            }
+          }
+        ],
+        "commandId": "cmd_i2v_<unique>"
+      },
+      "requiredResponseFields": [
+        "nodeId",
+        "taskId",
+        "status",
+        "revision",
+        "commandId",
+        "submissionId",
+        "consistencyStatus"
+      ],
+      "optionalIdentityFields": [
+        "shortCode",
+        "mentionToken"
+      ]
+    },
+    "refresh_topview_canvas_generation_task": {
+      "arguments": {
+        "canvasId": "<canvasId>",
+        "nodeId": "node_gen_…",
+        "taskId": "task_…"
+      },
+      "requiredResponseFields": [
+        "nodeId",
+        "taskId",
+        "status",
+        "revision"
+      ],
+      "successResponseFields": [
+        "mediaRef"
+      ]
+    }
+  }
+}

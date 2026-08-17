@@ -1,0 +1,25 @@
+{
+  "name": "topview",
+  "displayName": "TopviewAI",
+  "version": "1.0.0",
+  "minClientVersions": {
+    "cursor": "3.15.6"
+  },
+  "description": "Use Topview Canvas and Marketing Studio through one TopviewAI plugin and MCP connection.",
+  "author": {
+    "name": "Topview"
+  },
+  "repository": "https://github.com/topviewai/plugins",
+  "homepage": "https://www.topview.ai",
+  "keywords": [
+    "topview",
+    "topviewai",
+    "canvas",
+    "marketing",
+    "ecommerce",
+    "mcp"
+  ],
+  "logo": "./assets/topview-icon.png",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.cursor.json"
+}
