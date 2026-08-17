@@ -3,8 +3,8 @@
   "client": "claude",
   "version": "1.0.0",
   "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-plugin-1.0.0.plugin",
-  "sha256": "4035fb643679aef72e4a1ecb72365556e62e1dc8d1851599a855dfb31ff871b4",
+  "sha256": "cf39da7324f3c92ccd91143bda0131678de7f3aa6dcd1b8314277e2b1275e204",
   "sizeBytes": 131679,
-  "publishedAt": "2026-08-17T07:24:01Z",
-  "releaseNotes": "Initial public TopviewAI plugin release."
+  "publishedAt": "2026-08-17T07:45:45Z",
+  "releaseNotes": "Initial public TopviewAI plugin release with GitHub Release assets."
 }
