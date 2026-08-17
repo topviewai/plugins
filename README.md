@@ -10,7 +10,7 @@ are intentionally excluded.
 Paste the matching sentence into your host:
 
 ```text
-/goal Install TopviewAI only from https://github.com/topviewai/plugins. For this private-repository pilot, use authenticated GitHub CLI or git credentials to read `docs/codex.md`; never use anonymous web search or substitute another repository. Clean any old Topview install, add this repository as the Codex Marketplace, install `topview@topview`, and complete the browser OAuth flow before asking me to restart Codex and verify in a new task.
+/goal Read the Codex installation guide in my authenticated GitHub repository `topviewai/plugins`, install TopviewAI, complete OAuth, and set up a new task for me.
 ```
 
 ```text
