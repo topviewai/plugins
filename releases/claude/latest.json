@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "client": "claude",
   "version": "1.0.0",
-  "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-plugin-1.0.0-mcp.plugin",
+  "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-plugin-1.0.0.plugin",
   "sha256": "42208b5db1eedf778bd9fac347b7d6869dd0150be6186732d2265e44b0cac682",
   "sizeBytes": 128240,
   "publishedAt": "2026-08-17T13:00:06Z",
-  "releaseNotes": "Repackaged 1.0.0 Claude plugin: the production MCP is bundled with the plugin and starts OAuth on first use; do not add a separate Custom Connector. The immutable -mcp artifact name prevents stale CDN reuse."
+  "releaseNotes": "Repackaged 1.0.0 Claude plugin: the production MCP is bundled with the plugin and starts OAuth on first use; do not add a separate Custom Connector."
 }
