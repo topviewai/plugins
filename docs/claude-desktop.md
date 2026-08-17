@@ -4,7 +4,7 @@ Read the [shared installation contract](installation-contract.md) first. Use
 the local Claude Desktop or Cowork application, not Claude Code or a browser
 only session.
 
-1. Download the approved production release metadata at `https://raw.githubusercontent.com/topviewai/plugins/5d071de/releases/claude/latest.json`
+1. Download the approved production release metadata at `https://raw.githubusercontent.com/topviewai/plugins/40cd9a8d764f9fcccd6091866c9b4a377a656030/releases/claude/latest.json`
    over HTTPS. Read `downloadUrl`, `sha256`, and `sizeBytes` from that same
    response.
 2. Download the referenced `.plugin` file to a temporary directory. Require an
