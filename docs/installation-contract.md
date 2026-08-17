@@ -24,8 +24,9 @@ An installation is complete only when all applicable stages have succeeded:
 
 1. Install the exact `topview@topview` plugin or the verified matching release
    artifact.
-2. Start and finish the Topview browser OAuth flow. The user alone approves
-   OAuth, native file pickers, install permissions, and application restart.
+2. Start and finish the Topview browser OAuth flow when the platform guide
+   requires it. The user alone approves OAuth, native file pickers, install
+   permissions, and application restart.
    Do not request, paste, log, or store a password, token, cookie, or OAuth
    code in a terminal or document.
 3. Verify the local plugin/MCP or extension registration using the commands or
@@ -36,15 +37,15 @@ An installation is complete only when all applicable stages have succeeded:
    registered Topview MCP/skills are visible. Do not submit paid generation
    work merely to test installation.
 
-### Cursor exception: the restart splits the flow
+### Cursor exception: one prompt, one restart
 
-For Cursor, installation and authorization are intentionally two tasks. The
-initial task installs the local plugin and VSIX, then must stop with the restart
-handoff. It must **not** claim that it started OAuth or wait for authorization:
-the current Cursor process has not loaded the newly installed plugin. After the
-user fully quits and reopens Cursor in the intended workspace, they paste the
-same short prompt in a new task. That second task performs only the Cursor MCP
-status, OAuth, and read-only verification steps.
+For Cursor, the one installation task installs the local plugin and VSIX, then
+stops with the restart handoff. It must **not** claim that it started OAuth or
+wait for authorization: the current Cursor process has not loaded the newly
+installed plugin. After the user fully quits and reopens Cursor in the intended
+workspace, Cursor loads the MCP automatically. The user authorizes TopviewAI
+once in Cursor Settings, then starts their normal Topview task. They do **not**
+paste the installation prompt again.
 
 ## Failure handling
 
