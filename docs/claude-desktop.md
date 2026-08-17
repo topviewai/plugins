@@ -11,17 +11,19 @@ only session.
    exact byte-count and SHA-256 match, then run `unzip -t` successfully.
 3. In Claude, open **Customize → Plugins → + → Upload plugin file**. Select the
    verified `.plugin` file and confirm installation yourself.
-4. Connect TopviewAI once as an account-level remote connector: open
-   **Customize → Connectors → + → Add custom connector**, enter exactly
-   `https://mcp.topview.ai`, then complete the browser OAuth flow. If a Custom
-   `topview` connector is already connected, reuse it; do not add a second one.
-5. Start a new conversation, enable the connected `topview` connector for that
-   conversation, then make one safe, read-only Topview request to verify the
-   connector and the plugin skills together.
+4. Start a new conversation and enable the installed **TopviewAI** plugin. Its
+   bundled `topview` remote MCP connects in tasks; do **not** also add a Custom
+   Connector for this installation.
+5. Make one safe, read-only Topview request. When Claude opens the browser
+   OAuth flow, the user must sign in at Topview and approve access, then return
+   to Claude and retry the same request. Confirm that the Plugin-provided
+   `topview` connector is connected and the request succeeds.
 
-The plugin intentionally contains skills only. It does not declare a second
-plugin-scoped remote MCP, because Claude treats that as a separate connector
-and would not reuse the OAuth connection above.
+TopviewAI deliberately packages its production MCP with the plugin so that
+installation and first-use OAuth stay in one path. A separately added Custom
+`topview` connector is a different connection source and can make the same MCP
+appear twice. If one exists from earlier testing, leave it disabled for this
+plugin test; new users should not create one.
 
 Do not upload a Codex ZIP, use Claude Code shell commands, bypass the file
 picker or OAuth confirmation, or enter credentials in a terminal.

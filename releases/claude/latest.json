@@ -3,8 +3,8 @@
   "client": "claude",
   "version": "1.0.0",
   "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-plugin-1.0.0.plugin",
-  "sha256": "9ff93ab328f9e461c9c9ff20f063d67952d7c168faf07275b9d93d92f585990e",
-  "sizeBytes": 130016,
-  "publishedAt": "2026-08-17T12:49:25Z",
-  "releaseNotes": "Repackaged 1.0.0 Claude plugin: skills use the single production Custom Connector instead of declaring a duplicate plugin connector."
+  "sha256": "42208b5db1eedf778bd9fac347b7d6869dd0150be6186732d2265e44b0cac682",
+  "sizeBytes": 128240,
+  "publishedAt": "2026-08-17T13:00:06Z",
+  "releaseNotes": "Repackaged 1.0.0 Claude plugin: the production MCP is bundled with the plugin and starts OAuth on first use; do not add a separate Custom Connector."
 }

@@ -27,10 +27,10 @@ Read https://github.com/topviewai/plugins/blob/main/docs/cursor.md to install To
 
 Read the shared [installation contract](docs/installation-contract.md) before
 using any platform guide. Claude's guide selects the correct flow for Claude
-Code or Claude Desktop / Cowork. Claude plugins provide TopviewAI skills;
-connect the production MCP once through the documented Custom Connector flow.
-Do not use Claude Code terminal commands in Claude Desktop, and do not upload
-a `.plugin` file to Claude Code.
+Code or Claude Desktop / Cowork. The Claude plugin includes the production
+TopviewAI MCP and starts its OAuth flow on first use; do not add a separate
+Custom Connector for the same installation. Do not use Claude Code terminal
+commands in Claude Desktop, and do not upload a `.plugin` file to Claude Code.
 
 ## Security
 
