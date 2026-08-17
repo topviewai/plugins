@@ -78,7 +78,25 @@ prompt again to complete OAuth and verification.
    The Canvas opens in the right editor group, not the left Activity Bar
    sidebar.
 
-Never manually delete `~/.cursor/extensions/topview.topview-canvas-side-panel-*`,
-edit `extensions.json`, or clear Cursor global caches. If the extension or
-Topview MCP entry is absent after a full restart, stop and report the exact
-verified artifact version, Cursor workspace, and host-visible failure.
+## Update or reauthorize
+
+- **Update:** repeat Task 1 with the matching repository files and verified
+  VSIX, then perform the restart and Task 2 again. Replacing only
+  `~/.cursor/plugins/local/topview/` and force-installing the matching Topview
+  VSIX is the supported Topview reset; it does not require clearing Cursor
+  caches.
+- **Reauthorize:** in Cursor Settings, open the Topview MCP entry and use
+  **Disconnect**, **Sign out**, or **Authenticate**, whichever control Cursor
+  exposes. Complete the browser flow again in the same Cursor window. The
+  browser approval, not a cache deletion, is what changes the OAuth account.
+- **Do not broad-clear Cursor data:** never delete `Cache`, `CacheData`,
+  `User/globalStorage`, or the whole `~/.cursor/` directory; never edit
+  `extensions.json`. Those locations also contain unrelated extension and MCP
+  state, and clearing them is neither a reliable reinstall nor a safe
+  reauthorization method.
+
+If the verified production plugin still opens an unexpected OAuth site after a
+full restart, stop and report the exact plugin version, VSIX version, Cursor
+workspace, MCP status, and observed URL. Do not attempt repeated reinstalls or
+a global cache wipe; that is a host-registration fault requiring a targeted
+support recovery.
