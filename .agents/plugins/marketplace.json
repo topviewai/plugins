@@ -1,7 +1,7 @@
 {
   "name": "topview",
   "interface": {
-    "displayName": "TopviewAI"
+    "displayName": "Topview"
   },
   "plugins": [
     {

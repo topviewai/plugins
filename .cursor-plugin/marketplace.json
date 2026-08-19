@@ -11,7 +11,7 @@
     {
       "name": "topview",
       "source": "topview",
-      "description": "Use Topview Canvas and Marketing Studio through one TopviewAI plugin and MCP connection.",
+      "description": "Use Topview Canvas and Marketing Studio through one Topview plugin and MCP connection.",
       "minClientVersions": {
         "cursor": "3.15.6"
       }

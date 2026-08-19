@@ -1,6 +1,6 @@
-# TopviewAI Plugins
+# Topview Plugins
 
-Official public installation repository for TopviewAI on Codex, Cursor, Claude
+Official public installation repository for Topview on Codex, Cursor, Claude
 Code, and Claude Desktop / Cowork. This repository contains runtime-only plugin
 files. Development, release automation, test data, and private infrastructure
 are intentionally excluded.
@@ -14,23 +14,21 @@ the private pilot, use the authenticated GitHub account that has access to
 this repository; do not replace the repository with a search result.
 
 ```text
-/goal Read https://github.com/topviewai/plugins/blob/main/docs/codex.md to install TopviewAI, complete OAuth, and set up a new task for me.
+/goal Read https://github.com/topviewai/plugins/blob/main/docs/codex.md to install Topview, complete OAuth, and set up a new task for me.
 ```
 
 ```text
-Read https://github.com/topviewai/plugins/blob/main/docs/cursor.md to install TopviewAI in one prompt, then follow its single-restart authorization handoff exactly.
+Read https://github.com/topviewai/plugins/blob/main/docs/cursor.md to install Topview in one prompt, then follow its single-restart authorization handoff exactly.
 ```
 
 ```text
-/goal Read https://github.com/topviewai/plugins/blob/main/docs/claude.md to install TopviewAI, complete OAuth, and set up a new task for me.
+/goal Read https://github.com/topviewai/plugins/blob/main/docs/claude.md to install Topview, complete OAuth, and set up a new task for me.
 ```
 
 Read the shared [installation contract](docs/installation-contract.md) before
 using any platform guide. Claude's guide selects the correct flow for Claude
-Code or Claude Desktop / Cowork. The Claude plugin includes the production
-TopviewAI MCP and starts its OAuth flow on first use; do not add a separate
-Custom Connector for the same installation. Do not use Claude Code terminal
-commands in Claude Desktop, and do not upload a `.plugin` file to Claude Code.
+Code or Claude Desktop / Cowork. Do not use Claude Code terminal commands in
+Claude Desktop, and do not upload a `.plugin` file to Claude Code.
 
 ## Security
 

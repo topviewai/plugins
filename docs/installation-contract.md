@@ -1,4 +1,4 @@
-# TopviewAI installation contract
+# Topview installation contract
 
 This contract applies to the Codex, Cursor, Claude Code, and Claude Desktop /
 Cowork guides in this repository. It intentionally follows a short-prompt,
@@ -11,7 +11,7 @@ the flow.
 1. Run the guide in the intended **local desktop host**. Do not claim an
    installation from a browser-only, remote, sandboxed, or headless session
    that cannot install local software or receive the OAuth callback.
-2. The only approved distribution source is `https://github.com/topviewai/plugins.git`. While this
+2. The only approved distribution source is `https://github.com/topviewai/plugins`. While this
    repository is private, web access can return 404 despite valid local access;
    use the already-authorized local `gh`/git credential path. Never search for,
    clone, or install a similarly named replacement plugin.
@@ -43,13 +43,9 @@ For Cursor, the one installation task installs the local plugin and VSIX, then
 stops with the restart handoff. It must **not** claim that it started OAuth or
 wait for authorization: the current Cursor process has not loaded the newly
 installed plugin. After the user fully quits and reopens Cursor in the intended
-workspace, Cursor loads the MCP automatically. The user authorizes TopviewAI
+workspace, Cursor loads the MCP automatically. The user authorizes Topview
 once in Cursor Settings, then starts their normal Topview task. They do **not**
 paste the installation prompt again.
-
-Canvas rendering depends on the Cursor host mode, not on installation or OAuth:
-use **IDE mode** to open a Canvas in the right editor-group side panel. In
-**Agent mode**, Canvas output is available only in the chat conversation.
 
 ## Failure handling
 
