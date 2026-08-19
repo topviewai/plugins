@@ -3,8 +3,8 @@
   "client": "cursor",
   "version": "1.0.0",
   "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-canvas-side-panel-1.0.0.vsix",
-  "sha256": "4461986d7e49f699ff781dfdba7b767f572c752a5bee67c771f2a78fffdbcadc",
-  "sizeBytes": 8234,
-  "publishedAt": "2026-08-17T07:45:45Z",
-  "releaseNotes": "Initial public TopviewAI Cursor side-panel extension release."
+  "sha256": "50e8de48d915cdab011fb5e154cf38599c2cfa0d32cc496dc8df49823262e44d",
+  "sizeBytes": 8230,
+  "publishedAt": "2026-08-19T06:58:35Z",
+  "releaseNotes": "Topview 1.0.0 Cursor side-panel release with the user-facing plugin name updated to Topview."
 }
