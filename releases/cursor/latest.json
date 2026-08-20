@@ -3,8 +3,8 @@
   "client": "cursor",
   "version": "1.0.0",
   "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-canvas-side-panel-1.0.0.vsix",
-  "sha256": "e69e4e477a9b5dbbefe288354f48551fbe958587156edeb83279e6fcc3a580bf",
+  "sha256": "958d856c291d152f66f169965abadcbafb981665d46979af568fc9a12d7ded10",
   "sizeBytes": 8230,
-  "publishedAt": "2026-08-20T03:21:07Z",
-  "releaseNotes": "Topview 1.0.0 Cursor side-panel asset for the refreshed plugin descriptions and starter prompts release."
+  "publishedAt": "2026-08-20T14:27:20Z",
+  "releaseNotes": "Topview 1.0.0 adds Canvas-first creation, stricter narrative video routing, Seedance 2.5 workflows, and Gateway-owned generation defaults."
 }
