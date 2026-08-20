@@ -4,7 +4,7 @@ Source mapping: `workflow-short-film-creation`.
 
 ## Intent
 
-World-building short film with reusable Character/Environment/Object Assets and persisted scene records.
+Narrative production and story/chapter/script/screenplay adaptation with reusable Character/Environment/Object Assets and persisted scene records. This workflow preserves requested story coverage and continuity across scenes or future episodes.
 
 ## Read first
 
@@ -13,7 +13,8 @@ World-building short film with reusable Character/Environment/Object Assets and 
 ## DAG
 
 ```text
-story outline (Plan Ledger)
+Original Goal Contract (coverage, duration, dialogue, compression policy)
+→ adaptation outline and scene breakdown (Plan Ledger)
 → style text brief only (not a default visual input)
 → create/adopt character/environment/object Asset nodes
      (safe-parallel when preplanned; else serial if height-dependent)
@@ -32,8 +33,11 @@ Order invariant: **Asset nodes → persisted scenes → storyboard (`sceneNodeId
 
 ## Hard rules
 
-- Self-contained ≤max final prompt → prefer Direct.
+- Once routed here, do not fall back to Direct by rewriting the source into a condensed generation prompt. Re-route only when the user explicitly changes the deliverable to a standalone clip that passes every Direct Eligibility Gate.
+- Episodes, chapter/novel/script/screenplay adaptations, named recurring characters, and shared story-world elements require consistency. Create or adopt durable typed assets before dependent scene generation.
+- Missing duration, coverage, dialogue, or compression policy is not permission to summarize. Ask the smallest focused question needed before freezing a paid plan when the answer would materially change scenes, assets, or task count.
 - **Single-task gate:** continuous narrative `T ≤ max` without hard space-time cuts ⇒ one Scene / one video task even with multiple camera beats.
+- The single-task gate only controls final video task assembly; it does not bypass asset creation, persisted Scene planning, or storyboard stages required by the Original Goal Contract.
 - Explicit hard cuts / location jumps / long-form targets may split; each segment repeats that segment’s asset typed inputs via Asset `nodeId`.
 - Style images are not default downstream refs.
 - A scene draft may reference an Asset whose media is pending, but scene storyboard submission has a hard readiness barrier: every visual reference needs a durable image. Asset media tasks may generate in the background after safe-parallel or serial submits; only submit the scene storyboard after all required assets are ready and projected when mentions are needed.

@@ -1,7 +1,7 @@
 interface:
   display_name: "Topview Canvas"
   short_description: "Operate Canvas projects, SceneCards, generation, layout, and Timeline"
-  default_prompt: "Use $operate-topview-canvas to operate an authorized Topview Canvas: place nodes without overlap, create persisted SceneCards, run ordinary or Scene-specific capabilities → submit → refresh generation, and manage Timeline when asked."
+  default_prompt: "Use $operate-topview-canvas to open the authorized Canvas before any creation, keep it visible for direct user participation, place nodes without overlap, create persisted SceneCards, run ordinary or Scene-specific capabilities → submit → refresh generation, and manage Timeline when asked."
 dependencies:
   tools:
     - type: "mcp"

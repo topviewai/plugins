@@ -14,8 +14,10 @@ Always use the `$operate-topview-canvas` three-step V2 flow.
 - Prefer `video_edit` when multiple reference images/audio are required.
 - Use `image_to_video` only when start/end semantics are sufficient.
 - Use `text_to_video` only when no required visual refs exist.
-- Element Editing requires `reference_video` on each segment.
-- Replication final tasks use AI keyframes, not the original reference video.
+- Resolve the exact live model before deciding references or splits. When Seedance 2.5 wins, follow `$operate-topview-canvas` `references/seedance-2.5.md` and pass `omniReferenceTaskType` only when the selected capability exposes it.
+- Element Editing requires its own real `reference_video` on every segment. Seedance 2.5 uses `edit` for every segment, never `extend`; an unsplit source that fits the input budget skips extracted/edited keyframes.
+- Seedance 2.5 Replication uses the original source as the first direct omni-reference with `auto`, then real generated results as serial `extend` references. Legacy Replication uses accepted AI keyframes and excludes the original source from final tasks.
+- Do not put aspect ratio, duration, resolution, or Seedance task mode into prompt prose; keep them in live-schema structured parameters.
 
 ## Placement
 

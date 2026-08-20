@@ -36,6 +36,10 @@ An installation is complete only when all applicable stages have succeeded:
 5. In the new task, make one safe, read-only Topview request or confirm the
    registered Topview MCP/skills are visible. Do not submit paid generation
    work merely to test installation.
+6. After installation, OAuth, and the fresh-task check succeed, introduce what
+   Topview can do: visible Canvas-first image/video/music creation, whiteboards,
+   3D worlds, the 3D director stage, story/product/social workflows, and
+   Marketing Studio research. Do not give the success introduction early.
 
 ### Cursor exception: one prompt, one restart
 
@@ -45,7 +49,8 @@ wait for authorization: the current Cursor process has not loaded the newly
 installed plugin. After the user fully quits and reopens Cursor in the intended
 workspace, Cursor loads the MCP automatically. The user authorizes Topview
 once in Cursor Settings, then starts their normal Topview task. They do **not**
-paste the installation prompt again.
+paste the installation prompt again. That normal task performs the read-only
+check and then gives the capability introduction from step 6.
 
 ## Failure handling
 

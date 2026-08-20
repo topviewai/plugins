@@ -1,7 +1,7 @@
 interface:
   display_name: "Canvas Agent Workflows"
   short_description: "Run end-to-end Canvas creation workflows"
-  default_prompt: "Use $canvas-agent-workflows to complete a Canvas creation goal without asking me to reply continue."
+  default_prompt: "Use $canvas-agent-workflows to open the target Canvas before creating, keep the process visible for my participation, and complete the Canvas creation goal without asking me to reply continue just to advance completed stages."
 dependencies:
   tools:
     - type: "mcp"

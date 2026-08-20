@@ -369,7 +369,7 @@ Gateway schema 为 **oneOf** 两套：
 | 字段 | 类型 | 说明 |
 | --- | --- | --- |
 | `generationKind` | string | 可选；Scene 分镜提交时传 `scene_storyboard`（须与 capability 一致：`mediaType=image` + `taskType=storyboard_to_video`） |
-| `model` | string | 须来自选中 capability。`scene_storyboard` / `storyboard_to_video` **仅** `gpt-image-2`（与网页 StoryboardPanel 一致；勿传 seedream 等） |
+| `model` | string | 须来自选中 capability；用户未指定时使用服务端标记为 `preferred` 的兼容 capability，禁止在 Skill 内固化模型名 |
 | `sceneNodeId` | string | `scene_storyboard` 必填；必须是持久化 `story_scene`，服务端从其快照派生 prompt 与图片 inputs。`mediaType=video` 时可选：传了就把产物锚到该 Scene 的列（prompt / inputs 仍由 caller 提供）。其余情况传了会被拒 |
 | `nodeId` | string | 可选；**省略则服务端创建 placeholder**（推荐） |
 | `parentId` | string | 可选；资产卡 nodeId。提交时即把 image placeholder 挂进该卡 16:9 槽，见下方「挂进资产卡」 |
@@ -397,6 +397,14 @@ Gateway schema 为 **oneOf** 两套：
 - Skill 应按 schema 传：数字就传 number，字符串就传 string。
 - 服务端建卡路径会将 number coerce 为 string；视频 `resolution` 提交给后端时会去掉尾缀 `p`（`"480p"` → `"480"`）。
 - Gateway 顶层 `resolution` 属性类型仍为 string；**V2 请放在 `parameters.resolution`**。
+
+**关于 Seedance 2.5 的任务模式**
+
+- 只有选中 capability 的 `parameterEnums` 或 `parametersSchema` 明确暴露 `omniReferenceTaskType` 时，才把它放进 `parameters`；常见语义为 `auto`（普通生成/全能参考）、`edit`（原视频内修改）和 `extend`（生成独立续写片段）。
+- `edit` / `extend` 必须同时提供真实 `reference_video`。视频仅作为风格、运动、镜头、节奏或结构参考时仍是 `auto`，不能仅凭存在视频输入推断成编辑。
+- 分段的视频元素替换每段都保持 `edit`；只有新制作视频的后续串行续写段使用 `extend`。
+- capability 未暴露该字段时必须省略；`additionalProperties: false` 会拒绝未知键。禁止用付费 submit 探测字段支持，也禁止把前后端内部的自适应比例或 `duration=-1` 实现值写进 Agent 参数。
+- 输入参考时长与输出生成时长是不同限制。完整规则见 `$operate-topview-canvas` `references/seedance-2.5.md`，实时 capability/constraints 优先。
 
 #### Legacy（临时兼容，Skill 勿用）
 

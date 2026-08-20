@@ -1,6 +1,6 @@
 # Generation Planning
 
-Live `get_topview_canvas_generation_capabilities` is the generation authority for every Canvas-owned paid submit. Seedance 2 shared docs are planning knowledge only.
+Live `get_topview_canvas_generation_capabilities` is the generation authority for every Canvas-owned paid submit. Seedance family docs are planning knowledge only.
 
 Multi-stage creative workflows may add workflow-specific single-task gates on top of the universal duration algorithm below; those gates live in `$canvas-agent-workflows`.
 
@@ -9,7 +9,7 @@ Multi-stage creative workflows may add workflow-specific single-task gates on to
 For every flow that will submit paid generation:
 
 1. Call `get_topview_canvas_generation_capabilities` with the needed `mediaType` / `taskType` (or `taskTypes` / `models`) and prefer `include=[]` for a summary index.
-2. Prefer the user-named model when present and available; otherwise pick a compatible entry.
+2. Prefer the user-named model when present and available; otherwise follow the Gateway-owned `defaultSelectionPolicy`, select the returned capability marked `preferred`, and fall back to another compatible entry only when no preferred capability is returned.
 3. From the selected capability, read:
    - `taskType` / `model`
    - `requiredParameters` / `defaults` / `parameterEnums`
@@ -17,10 +17,21 @@ For every flow that will submit paid generation:
    - duration / resolution / aspectRatio / nativeAudio bounds when present in summary
    - `capabilityVersion`
    - only if needed: `include=["schema"]` for full `parametersSchema`, `additionalProperties` rules, or `constraints` when the summary is insufficient — do **not** hard-require `parametersSchema` on every plan
-4. Freeze an immutable plan: model, taskType(s), duration segments, required reference roles from `inputRoles` (`canvas_node.nodeId`), and any Scene vs task counts the caller tracks.
+4. Freeze an immutable plan: model, taskType(s), model-specific task intent, duration segments, required reference roles from `inputRoles` (`canvas_node.nodeId`), and any Scene vs task counts the caller tracks.
 5. Only then create nodes or submit tasks.
 
 **Forbidden:** default three Scenes / three video tasks first, then look up model config at submit time. **Forbidden:** call `topview_get_generation_config` as Canvas authority.
+
+## Server-owned default selection policy
+
+Explicit user choices always win when the selected live capability supports them. When the user omits a model or setting:
+
+1. Read the Gateway-owned root `defaultSelectionPolicy` and its version.
+2. Select the compatible capability marked `preferred`; if none is returned, select the first compatible live capability and disclose that fallback.
+3. Copy the selected capability's `defaults` into the paid-submit plan for every field the user did not specify.
+4. If `unavailablePreferredParameters` is non-empty, do not invent replacements or reuse stale client defaults. Tell the user what the live capability cannot honor before the paid approval gate.
+
+The plugin must never hardcode a preferred model name, resolution, quality, or other generation default. Those values are owned by MCP Gateway so a server rollout can change them without requiring users to upgrade the plugin. `parameterEnums` / `parametersSchema` remain the authority for what can be submitted; `defaults` are already constrained to those live values.
 
 ## `nativeAudio` is a decision, not a default
 
@@ -43,13 +54,25 @@ When the selected live model matches 视频全能模型 S2 / Seedance 2 family a
 
 If live capability differs, **live wins**.
 
+## Seedance 2.5 planning baseline (override with live capability)
+
+When the selected exact live model is Seedance 2.5, read [`seedance-2.5.md`](seedance-2.5.md). Resolve that model before reference strategy, split points, resolution, or prompt compilation.
+
+- Live output duration and resolution enums remain authoritative. Current compatibility knowledge is a 4–30s output window and a reference-video input margin up to about 30.2s; do not confuse the extra input-only margin with generated output.
+- If `omniReferenceTaskType` is advertised, select `auto`, `edit`, or `extend` from the user's substantive intent and pass it only as a structured parameter.
+- `edit` and `extend` require a real `reference_video`. A reference video used only for style, motion, camera, timing, or structure remains `auto`.
+- Every split segment of an in-place edit stays `edit`. Only a separately generated serial continuation uses `extend`.
+- Resolution must come from the selected live catalog entry. Do not hardcode a familiar Seedance resolution list.
+
+If the required mode is missing from the Agent-facing capability, do not paid-probe it and do not silently reinterpret the request.
+
 ## TaskType selection heuristics
 
 | Need | Prefer when capability offers it |
 | --- | --- |
 | Prompt only | `text_to_image` / `text_to_video` / audio-music types |
 | Edit existing images | `image_edit` + `reference_image` |
-| Scene storyboard IMAGE | `storyboard_to_video` with `generationKind=scene_storyboard` + `sceneNodeId`; server derives prompt and ordered image inputs. Model is web-parity **`gpt-image-2` only** (do not pass seedream / other image-edit models). |
+| Scene storyboard IMAGE | `storyboard_to_video` with `generationKind=scene_storyboard` + `sceneNodeId`; server derives prompt and ordered image inputs. Use the compatible model returned and preferred by the live capability; do not substitute a generic image-edit capability. |
 | Scene VIDEO | any video taskType plus `sceneNodeId`; caller still supplies prompt and inputs, the server only anchors the card to that Scene's column |
 | One start (+ optional end) frame animate | `image_to_video` |
 | Multi keyframe / product / style rich video | `video_edit` with multiple `reference_image` (+ audio if needed) |
@@ -60,7 +83,7 @@ If a rich flow needs `video_edit` / `reference_video` and the capability is miss
 
 ## Universal duration / task assembly
 
-Use the selected capability’s min/max duration. Do not hardcode `15` as universal. When Seedance 2 / S2 live max is 15s, apply the rules with `max = liveMax` and `min = liveMin` (often 4).
+Use the selected capability’s **output** min/max duration. Do not hardcode `15` or `30` as universal. Reference-video input limits are a separate budget and never increase generated output length. When a live maximum is 15s, apply the rules with `max = liveMax` and `min = liveMin` (often 4).
 
 Let `T` = user target duration in seconds, `max` / `min` = capability bounds.
 

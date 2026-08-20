@@ -10,7 +10,7 @@ Build this table before each paid submit (except `scene_storyboard`, which only 
 | --- | --- | --- |
 | Character / Environment / Object / Product Asset | `canvas_node` + Asset `nodeId` | Product: `all_enabled`; Character/Environment: `primary`; trim to capability max. Role from capability |
 | Generated keyframe / image node | `canvas_node` + `nodeId` | `reference_image` or start/end frame roles |
-| Source / reference video node | `canvas_node` + `nodeId` | `reference_video` (Element Editing default; Replication final tasks do **not** use original video — see workflow) |
+| Source / reference video node | `canvas_node` + `nodeId` | `reference_video`. Element Editing uses the real source/segment. Seedance 2.5 Replication uses the original source for segment 1 and each real preceding generated result for a serial extension; legacy Replication final tasks do **not** use the original video. |
 | Local extract/clip/audio | prepare → PUT → media `canvas_node` + `nodeId` | matching capability role |
 | Just-finished task in this workflow | `task_result` + `taskId` | matching role |
 | Bound character voice | `canvas_node` (audio child / bound voice) | `reference_audio` |
@@ -31,13 +31,17 @@ For every local Canvas file, complete `$operate-topview-canvas` `references/loca
 6. Results write back to the **same** generation node; never create a second result media node.
 7. Do not write backend wire tokens such as `<<<Image1>>>` in prompts.
 
-## Provenance registry (Replication / mixed frame sources)
+## Reference-duty and provenance registry
 
-Keep source-extracted frames and AI-generated keyframes in separate registries:
+Every selected reference gets exactly one declared duty. Explicit user mapping wins over approved plan wording, visible content, node title, and node order. Do not allow a target-person image's background, pose, framing, or camera to override a source video when the image owns identity/clothing only.
+
+On the legacy Replication path, keep source-extracted frames and AI-generated keyframes in separate registries:
 
 - Source-extracted frames may be Style / Composition evidence during planning.
-- Final Replication video tasks use **AI-generated** keyframes as typed inputs (Replication final-input policy).
-- Do not mix undeclared provenance. Element Editing uses the real source/segment as `reference_video`.
+- Final legacy Replication video tasks use **AI-generated** keyframes as typed inputs.
+- Do not mix undeclared provenance.
+
+Seedance 2.5 Replication does not create this frame registry: the source video directly owns its declared style/motion/structure duties. Element Editing always uses the real source/segment as `reference_video`; shared edited boundary images only control the join and do not change task intent.
 
 ## Mention + input example
 

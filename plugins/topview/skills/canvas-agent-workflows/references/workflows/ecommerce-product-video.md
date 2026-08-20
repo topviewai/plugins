@@ -25,7 +25,7 @@ Intake → content type → script (ledger lock)
 
 ## Hard rules
 
-- Simple ≤max product generate with a self-contained prompt → prefer Direct.
+- Re-route to Direct only when the user's original request passes every Direct Eligibility Gate; do not derive eligibility by rewriting a staged product brief into one prompt.
 - **Single-task gate:** `T ≤ max` AND same physical space AND same primary product context ⇒ exactly one Scene and one video task. Keyframe count/angles/steps are not split reasons.
 - Do **not** create Style/Character/Environment/Object cards by default; people/environments live inside integrated keyframes.
 - Never promise captions/stitching/mixing the product does not support via MCP.
