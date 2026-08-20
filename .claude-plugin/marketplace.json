@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "topview",
-      "description": "Use Topview Canvas, Canvas Agent Workflows, and Marketing Studio through one Topview plugin and MCP connection.",
+      "description": "TopView Canvas for creating, organizing, and editing visual content with your Agent.",
       "author": {
         "name": "Topview"
       },

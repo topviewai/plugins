@@ -11,7 +11,7 @@
     {
       "name": "topview",
       "source": "topview",
-      "description": "Use Topview Canvas and Marketing Studio through one Topview plugin and MCP connection.",
+      "description": "TopView Canvas for creating, organizing, and editing visual content with your Agent.",
       "minClientVersions": {
         "cursor": "3.15.6"
       }

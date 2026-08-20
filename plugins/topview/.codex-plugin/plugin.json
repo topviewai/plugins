@@ -1,7 +1,7 @@
 {
   "name": "topview",
   "version": "1.0.0",
-  "description": "Use Topview Canvas, Canvas Agent Workflows, and Marketing Studio through one Topview plugin and MCP connection.",
+  "description": "TopView Canvas for creating, organizing, and editing visual content with your Agent.",
   "author": {
     "name": "Topview"
   },
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Topview",
-    "shortDescription": "Use Topview Canvas, creation workflows, and Marketing Studio in Codex.",
-    "longDescription": "Install Topview once to open and operate Topview Canvas, run Canvas Agent Workflows for end-to-end generation, and use Marketing Studio playbooks for ecommerce, content, creator, and campaign research. All skills share one remote Topview MCP connection.",
+    "shortDescription": "TopView Canvas for creating, organizing, and editing visual content with your Agent.",
+    "longDescription": "TopView provides a shared visual Canvas for you and your Agent to create, organize, and refine visual content. Keep characters, scenes, references, assets, and versions connected, generate images and videos with built-in creative Skills, and switch naturally between Agent-driven creation and direct visual editing.",
     "developerName": "Topview",
     "category": "Productivity",
     "capabilities": [
@@ -29,10 +29,9 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Open and operate Topview Canvas.",
-      "Use Canvas Agent Workflows to remake a 15s product video end to end without asking me to reply continue.",
-      "Research a market and build a campaign plan with Marketing Studio.",
-      "Analyze a product and create a marketing execution plan."
+      "Analyze what makes this video work, then recreate it using my assets and creative direction.",
+      "Use my product assets to create 10 short-form video ad concepts for paid social.",
+      "Develop this story into a short drama, and organize the plot, characters, world, storyboards, and visual assets in Canvas."
     ],
     "brandColor": "#6366F1",
     "websiteURL": "https://www.topview.ai/home",
