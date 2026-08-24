@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "client": "claude",
-  "version": "1.0.0",
-  "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.0/topview-plugin-1.0.0.plugin",
-  "sha256": "63bf772b013ea6efcd2f1b9ea8e041cc1ef6b686826318664799818a229bcd32",
-  "sizeBytes": 158180,
-  "publishedAt": "2026-08-20T14:27:20Z",
-  "releaseNotes": "Topview 1.0.0 adds Canvas-first creation, stricter narrative video routing, Seedance 2.5 workflows, and Gateway-owned generation defaults; production MCP OAuth remains bundled."
+  "version": "1.0.1",
+  "downloadUrl": "https://github.com/topviewai/plugins/releases/download/v1.0.1/topview-plugin-1.0.1.plugin",
+  "sha256": "96c46223f1f69acc8082e6b602343dea7f3ec97dda9536ae689c4a66543b0123",
+  "sizeBytes": 158182,
+  "publishedAt": "2026-08-24T06:50:12Z",
+  "releaseNotes": "Topview 1.0.1 adds plugin Embed optimizations and aligns SceneCard creation and update with the 4–30 second Canvas contract."
 }
