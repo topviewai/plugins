@@ -3,7 +3,7 @@
     "type": "http",
     "url": "https://mcp.topview.ai",
     "headers": {
-      "X-Topview-Plugin-Version": "1.0.0",
+      "X-Topview-Plugin-Version": "1.0.1",
       "X-Topview-Plugin-Client": "claude"
     }
   }

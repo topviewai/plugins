@@ -168,7 +168,7 @@ Gateway 对多数画布工具接受 `_test` 中间段别名，例如：
 
 - `commandId`：1…256；每张新 SceneCard 使用新值。仅 timeout、`retryable=true` 或结果不确定时，用同一业务输入和同一 `commandId` 重试。
 - `sceneNumber` 为正整数；`sceneSummary` 1…512；`sceneText` 1…8000。
-- `duration` 为 4…15 的整数；`aspectRatio` 为 `21:9|16:9|4:3|1:1|3:4|9:16`。
+- `duration` 为 4…30 的整数；`aspectRatio` 为 `21:9|16:9|4:3|1:1|3:4|9:16`。
 - 字段瘦身：`commandId` / `sceneNumber` / `sceneSummary` / `sceneText` / 可选 `referenceNodeIds`（≤32）/ `duration` / `aspectRatio` / layout（`x`/`y`，可选 `width`/`height`）。**禁止**传 `environmentText`、`plotText`、`storyboardPrompt`、`videoPrompt`。
 - 素材位置写在 `sceneText` 的 `<<@shortCode>>`；`referenceNodeIds` 声明完整资产关系。服务端保留已有 token、仅在唯一精确 title/mention 命中处注入 token，或追加显式 `[References]` 并返回 warning。对应资产须已 projected（有可用 `shortCode`），禁止臆造 shortCode。
 
@@ -182,7 +182,7 @@ Gateway 对多数画布工具接受 `_test` 中间段别名，例如：
 | `sceneSummary` | 否 | 1…512 |
 | `sceneText` | 否 | 1…8000；落到卡片的 `actionText` |
 | `environmentText` | 否 | 0…8000，允许清空 |
-| `duration` | 否 | 4…15 整数 |
+| `duration` | 否 | 4…30 整数 |
 | `aspectRatio` | 否 | `21:9\|16:9\|4:3\|1:1\|3:4\|9:16` |
 | `videoPrompt` | 否 | 0…8000，允许清空 |
 
