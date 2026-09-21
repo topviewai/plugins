@@ -1,19 +1,19 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "topview",
-  "description": "Topview plugins for Claude Desktop, Cowork, and Claude Code.",
+  "description": "Official Topview browser-based Canvas plugin for Claude.",
   "owner": {
     "name": "Topview"
   },
   "plugins": [
     {
-      "name": "topview",
-      "description": "TopView Canvas for creating, organizing, and editing visual content with your Agent.",
+      "name": "topview-browser",
+      "description": "Create and edit visual content in the full Topview web Canvas.",
       "author": {
         "name": "Topview"
       },
       "category": "productivity",
-      "source": "./plugins/topview",
+      "source": "./plugins/topview-browser",
       "homepage": "https://www.topview.ai/home"
     }
   ]

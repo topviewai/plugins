@@ -1,0 +1,41 @@
+{
+  "name": "topview-browser",
+  "version": "1.0.3",
+  "description": "Create, organize, and edit visual content in Topview Canvas using a browser-native workflow.",
+  "author": {
+    "name": "Topview"
+  },
+  "repository": "https://github.com/topviewai/plugins",
+  "homepage": "https://www.topview.ai",
+  "keywords": [
+    "topview",
+    "topviewai",
+    "canvas",
+    "marketing",
+    "ecommerce",
+    "browser",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Topview",
+    "shortDescription": "Create and edit visual content in a browser-based Topview Canvas.",
+    "longDescription": "Topview provides a shared browser-based Canvas for you and your Agent to create, organize, and refine visual content. Keep characters, scenes, references, assets, and versions connected, generate images and videos with built-in creative Skills, and continue editing directly in the full Topview web Canvas.",
+    "developerName": "Topview",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Open my Topview Canvas in the browser and help me continue editing it.",
+      "Use my product assets to create short-form video ad concepts and organize them in Canvas.",
+      "Develop this story into a short film and keep the plot, characters, storyboards, and visual assets connected in Canvas."
+    ],
+    "brandColor": "#6366F1",
+    "websiteURL": "https://www.topview.ai/home",
+    "composerIcon": "./assets/topview-icon.png",
+    "logo": "./assets/topview-icon.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

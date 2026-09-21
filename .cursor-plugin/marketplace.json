@@ -4,17 +4,14 @@
     "name": "Topview"
   },
   "metadata": {
-    "description": "Topview plugins for Cursor.",
+    "description": "Official Topview browser-based Canvas plugin for Cursor.",
     "pluginRoot": "plugins"
   },
   "plugins": [
     {
-      "name": "topview",
-      "source": "topview",
-      "description": "TopView Canvas for creating, organizing, and editing visual content with your Agent.",
-      "minClientVersions": {
-        "cursor": "3.15.6"
-      }
+      "name": "topview-browser",
+      "source": "topview-browser",
+      "description": "Create and edit visual content in the full Topview web Canvas."
     }
   ]
 }

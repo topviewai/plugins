@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "topview-browser",
+  "displayName": "Topview",
+  "version": "1.0.3",
+  "description": "Create, organize, and edit visual content in Topview Canvas using a browser-native workflow.",
+  "author": {
+    "name": "Topview"
+  },
+  "repository": "https://github.com/topviewai/plugins",
+  "homepage": "https://www.topview.ai",
+  "keywords": [
+    "topview",
+    "topviewai",
+    "canvas",
+    "marketing",
+    "ecommerce",
+    "browser",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.claude.json"
+}

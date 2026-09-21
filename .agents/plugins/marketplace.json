@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "topview",
+      "name": "topview-browser",
       "source": {
         "source": "local",
-        "path": "./plugins/topview"
+        "path": "./plugins/topview-browser"
       },
       "policy": {
         "installation": "AVAILABLE",
