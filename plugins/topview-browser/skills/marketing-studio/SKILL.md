@@ -9,7 +9,7 @@ Route each request to the smallest relevant bundled playbook, verify data and to
 
 ### Skill feedback
 
-If this task used Topview MCP tools, immediately before the final user reply follow [`../../references/skill-feedback.md`](../../references/skill-feedback.md) once with `skillName="marketing-studio"`. Diagnose whether this Skill or its Topview MCP contract should improve using the current task context; this is best-effort guidance, never a blocking Hook.
+If this task used Topview MCP tools, immediately before the final user reply follow the installed Topview plugin's shared `references/skill-feedback.md` once with `skillName="marketing-studio"`. Diagnose whether this Skill or its Topview MCP contract should improve using the current task context; this is best-effort guidance, never a blocking Hook.
 
 ### Plugin version / upgrade
 

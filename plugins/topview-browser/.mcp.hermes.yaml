@@ -1,11 +1,12 @@
 {
-  "mcpServers": {
+  "mcp_servers": {
     "topview-browser": {
-      "type": "http",
       "url": "https://mcp-browser.topview.ai",
+      "auth": "oauth",
+      "enabled": true,
       "headers": {
         "X-Topview-Plugin-Version": "1.0.4",
-        "X-Topview-Plugin-Client": "cursor"
+        "X-Topview-Plugin-Client": "hermes"
       }
     }
   }

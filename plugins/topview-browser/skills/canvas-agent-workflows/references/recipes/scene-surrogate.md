@@ -2,7 +2,7 @@
 
 Prefer the native scene tools in `$operate-topview-canvas` (`create_topview_canvas_scene_node` for persistence; paid storyboard / Scene video via unified `submit_topview_canvas_generation_task`) when a persisted `story_scene` node is appropriate. Follow that skill’s Create / generation contract; do not restate it here.
 
-Use this Group + Text + media pattern only when the native scene tools are unavailable, or the user only wants Group organization without a `story_scene` node. Compose with the generic Group pattern in `$operate-topview-canvas` → [`references/node-groups.md`](../../../operate-topview-canvas/references/node-groups.md) (with [`node-layout.md`](../../../operate-topview-canvas/references/node-layout.md)).
+Use this Group + Text + media pattern only when the native scene tools are unavailable, or the user only wants Group organization without a `story_scene` node. Load `$operate-topview-canvas`, then compose with its `references/node-groups.md` generic Group pattern and `references/node-layout.md` layout rules.
 
 ## Structure (Group application)
 

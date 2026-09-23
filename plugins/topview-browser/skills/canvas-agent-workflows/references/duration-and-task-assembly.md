@@ -1,6 +1,6 @@
 # Duration and Task Assembly
 
-Universal duration algorithm (capability min/max, `T≤max` single task, balanced splits, no short tails, 1–3s handling, omitted duration/aspect defaults): `$operate-topview-canvas` → [`references/generation-planning.md`](../../operate-topview-canvas/references/generation-planning.md).
+Universal duration algorithm (capability min/max, `T≤max` single task, balanced splits, no short tails, 1–3s handling, omitted duration/aspect defaults): load `$operate-topview-canvas`, then read its `references/generation-planning.md`.
 
 Read that file first. This file only adds **workflow-specific single-task gates**, model-specific continuation behavior, and Element Editing millisecond notes.
 

@@ -16,6 +16,15 @@ cookies. A separate sign-in to the Topview website may be required.
 - [Claude installation](docs/claude.md)
 - [Cursor installation](docs/cursor.md)
 - [Grok Bot installation](docs/grok-bot.md)
+- [Hermes installation](docs/hermes.md)
 - [Security and host behavior](docs/browser-contract.md)
+
+## Install Hermes with one prompt
+
+Paste this into a local Hermes session:
+
+```text
+Read https://github.com/topviewai/plugins/blob/main/docs/hermes.md completely, then install and enable Topview in this local Hermes Agent. Use the documented `hermes config set --force` command to merge the exact bundled MCP configuration without changing my other settings; do not try to edit `config.yaml` with a file-writing tool. Complete Topview OAuth with me, verify the MCP connection, and tell me to start a new session. Do not claim success until the read-only verification in that new session succeeds.
+```
 
 Product home: https://www.topview.ai

@@ -1,7 +1,7 @@
 {
   "name": "topview-browser",
   "displayName": "Topview",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Browser-native Topview Canvas for Grok Bot and other agents with an integrated browser.",
   "author": {
     "name": "Topview"

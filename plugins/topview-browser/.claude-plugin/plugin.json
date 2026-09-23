@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "topview-browser",
   "displayName": "Topview",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create, organize, and edit visual content in Topview Canvas using a browser-native workflow.",
   "author": {
     "name": "Topview"
