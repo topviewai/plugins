@@ -66,6 +66,18 @@ When the selected exact live model is Seedance 2.5, read [`seedance-2.5.md`](see
 
 If the required mode is missing from the Agent-facing capability, do not paid-probe it and do not silently reinterpret the request.
 
+## Topview T1 planning baseline (override with live capability)
+
+When the user names Topview T1, or the selected exact live model is `topview-t1`, read [`topview-t1.md`](topview-t1.md) before freezing the video plan. User choice wins over the Seedance preference used by replication and element-editing workflows.
+
+- Use the Topview T1 capability for the requested task: `text_to_video`, `image_to_video`, or `video_edit`. Pass its `model` value unchanged.
+- Resolution and duration come from that capability. The compatibility baseline is 720 or 1080, and duration `-1` or 4–30 seconds. Do not send `480` or `draftMode`.
+- Pass `aspectRatio` only when the selected capability exposes it. Image-to-video omits it.
+- Do not send `omniReferenceTaskType` or `internetSearch` unless the capability advertises them. A reference video stays a normal `video_edit` input, not a Seedance edit or extend.
+- Reference counts stay inside the live `inputRoles`. Do not reuse the Seedance 2.0 9-image / 3-video budget for this model.
+
+If the live capability list does not contain Topview T1 for the needed task type, say so and stop. Do not substitute Seedance and claim the Topview T1 request succeeded.
+
 ## TaskType selection heuristics
 
 | Need | Prefer when capability offers it |

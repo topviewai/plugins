@@ -32,7 +32,7 @@ Lock mode from clear intent; ask once if ambiguous or conflicting. Restate mode 
 
 ## Resolve the model before the production path
 
-Prefer a compatible Seedance 2.5 capability for reference-rich replication unless the user explicitly selected another model. The user's available explicit choice wins. Resolve the exact live model, output duration, reference-video budget, resolution enum, input roles, and task-mode enum before choosing splits or references.
+Prefer a compatible Seedance 2.5 capability for reference-rich replication unless the user explicitly selected another model. The user's available explicit choice wins. When that choice is Topview T1, read `$operate-topview-canvas` `references/topview-t1.md`, submit the live `topview-t1` capability, and do not add `omniReferenceTaskType`, `draftMode`, or resolution `480`. Resolve the exact live model, output duration, reference-video budget, resolution enum, input roles, and task-mode enum before choosing splits or references.
 
 Before the first paid submit, lock one exact planned resolution from the selected capability and include it in the plan/approval summary together with the live alternatives. If an existing default is absent or incompatible, resolve the choice before generation instead of guessing. Do not hardcode a Seedance resolution list or invent prices/credit savings.
 

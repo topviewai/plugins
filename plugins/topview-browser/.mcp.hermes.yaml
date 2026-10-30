@@ -5,7 +5,7 @@
       "auth": "oauth",
       "enabled": true,
       "headers": {
-        "X-Topview-Plugin-Version": "1.0.4",
+        "X-Topview-Plugin-Version": "1.0.5",
         "X-Topview-Plugin-Client": "hermes"
       }
     }

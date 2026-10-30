@@ -27,6 +27,17 @@ If the capability does not advertise `omniReferenceTaskType` in `parameterEnums`
 
 Do not send frontend/backend implementation values such as an internal adaptive-ratio sentinel or `duration=-1` unless the live Agent-facing capability explicitly exposes them. Agent submits contain only advertised parameters.
 
+## Draft mode is an explicit low-cost preview
+
+When the selected capability advertises `draftMode`, `parameters.draftMode: true` produces a 480p draft (样片) for cheap review before a full render. Enable it only when the user asks for a draft or preview, or the approved plan explicitly drafts first; never as a silent cost default.
+
+- Send the capability's 480 resolution enum value in the same `parameters` object; draft mode does not rewrite resolution for you.
+- A 480 value that exists only for draft mode is rejected without `draftMode: true`.
+- Do not combine draft mode with `omniReferenceTaskType: extend`.
+- Upgrading a draft to a full-resolution render is not an Agent submit; point the user to the draft node in the Canvas web UI.
+
+If the capability does not advertise `draftMode`, omit it and do not imitate a draft by lowering resolution.
+
 ## Input duration and output duration are different budgets
 
 Use live capability and constraint data first. When the selected Seedance 2.5 capability has no conflicting bound, the current compatibility baseline is:

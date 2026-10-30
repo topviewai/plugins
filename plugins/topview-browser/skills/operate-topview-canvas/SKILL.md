@@ -21,7 +21,8 @@ Contract reference for parameters and text envelopes: [`references/canvas-mcp-ap
 Layout algorithms and default sizes: [`references/node-layout.md`](references/node-layout.md).  
 Generic Group composition: [`references/node-groups.md`](references/node-groups.md).  
 Capability-first planning and universal duration splits: [`references/generation-planning.md`](references/generation-planning.md).  
-Seedance 2.5 task-mode and prompt contract: [`references/seedance-2.5.md`](references/seedance-2.5.md).
+Seedance 2.5 task-mode and prompt contract: [`references/seedance-2.5.md`](references/seedance-2.5.md).  
+Topview T1 video parameter contract: [`references/topview-t1.md`](references/topview-t1.md).
 Local files → durable upload sources: [`references/local-media-bridge.md`](references/local-media-bridge.md).
 
 ## Calling principles
@@ -164,7 +165,7 @@ Use this paid workflow only when the user explicitly asks to generate. A draft-o
 
 The Canvas-first creation gate is a hard prerequisite: do not call any paid submit until the target Canvas has been made visible. Never use standalone `topview_generate_image`, `topview_generate_video`, or `topview_generate_music` for plugin creation requests. Whiteboard, `world_3d`, and `director_stage` are interactive Canvas surfaces: keep the Canvas open and use the existing UI path so the user can create/select/edit the surface directly. If there is no MCP create action for the base surface, ask the user to create or select it in the visible Canvas and resume from **Use in chat**; do not replace it with an unrelated generated asset.
 
-Before submit, read [`references/generation-planning.md`](references/generation-planning.md) (capabilities before task counts; universal duration splits). When the selected live model is Seedance 2.5, also read [`references/seedance-2.5.md`](references/seedance-2.5.md) before freezing task intent or prompt text. If any `inputs` come from local files or FFmpeg artifacts, read [`references/local-media-bridge.md`](references/local-media-bridge.md) first and finish upload validation before submit.
+Before submit, read [`references/generation-planning.md`](references/generation-planning.md) (capabilities before task counts; universal duration splits). When the selected live model is Seedance 2.5, also read [`references/seedance-2.5.md`](references/seedance-2.5.md) before freezing task intent or prompt text. When the selected live model is Topview T1 (`topview-t1`), read [`references/topview-t1.md`](references/topview-t1.md) and do not copy Seedance-only parameters onto it. If any `inputs` come from local files or FFmpeg artifacts, read [`references/local-media-bridge.md`](references/local-media-bridge.md) first and finish upload validation before submit.
 
 ### Paid generation approval mode
 
@@ -256,6 +257,7 @@ For ordinary V2 submissions, required: `canvasId`, `mediaType`, `prompt`, `capab
 - **`layout`**: optional `{ x, y, width?, height? }` for **top-level** Tier A placeholders. Prefer it so cards land on a preplanned grid. **Forbidden** with `nodeId` / `parentId` / `sceneNodeId`. Omit → `(0,0)` compat; no BFF auto-avoidance. Asset Tier C and Scene auto layout stay server-owned.
 - **`parameters`**: keys/types must match the selected capability. Prefer summary `requiredParameters` / `defaults` / `parameterEnums`; pull `parametersSchema` (`additionalProperties: false`) via `include=["schema"]` only when the summary is insufficient. Prefer `parameters.resolution` / `parameters.duration` over flat legacy fields; pass number vs string exactly as the capability states.
 - **Seedance 2.5 task intent**: when and only when the selected capability advertises `omniReferenceTaskType`, pass exactly one live enum under `parameters`: `auto` for ordinary or omni-reference generation, `edit` for in-place source modification, or `extend` for standalone new footage adjoining an unchanged source. `edit` and `extend` require a real `reference_video`. Omit the field for every capability that does not expose it; never add an unadvertised key or communicate the mode by appending keywords to the prompt. Read [`references/seedance-2.5.md`](references/seedance-2.5.md) for workflow invariants and fallback behavior.
+- **Topview T1**: when the user names Topview T1, or the selected capability model is `topview-t1`, submit that exact capability. Read [`references/topview-t1.md`](references/topview-t1.md). Do not send `draftMode`, resolution `480`, `internetSearch`, or `omniReferenceTaskType` unless that capability advertises the key. Image-to-video omits `aspectRatio`.
 - **`inputs`**: typed `{ role, source: { kind, … }, mention? }`. Roles and cardinalities come from capability summary `inputRoles` (or schema `inputs[]` when needed). Use `source.kind = canvas_node` with the Asset / media `nodeId` for all Canvas references, or `task_result` for an eligible task result. Gateway may still expose deprecated wire `canvas_asset` + `assetId` for compatibility — **Agent must not use them**; Asset refs are always `canvas_node.nodeId`. `upload_file` is not a Canvas source. Never invent roles or pass presigned URLs / local paths as durable sources.
 - **Mentions**: prompt uses `<<@shortCode>>` (or returned `mentionToken`); matching input must set `mention.shortCode` to the same value. Do not write backend wire tokens such as `<<<Image1>>>`.
 

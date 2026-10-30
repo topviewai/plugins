@@ -404,6 +404,21 @@ Gateway schema 为 **oneOf** 两套：
 - capability 未暴露该字段时必须省略；`additionalProperties: false` 会拒绝未知键。禁止用付费 submit 探测字段支持，也禁止把前后端内部的自适应比例或 `duration=-1` 实现值写进 Agent 参数。
 - 输入参考时长与输出生成时长是不同限制。完整规则见 `$operate-topview-canvas` `references/seedance-2.5.md`，实时 capability/constraints 优先。
 
+**关于 Seedance 2.5 样片模式（`draftMode`）**
+
+- 只有选中 capability 的 `parametersSchema` / `defaults` 暴露 `draftMode` 时才可使用（当前为精确 `seedance-2.5` 的 `text_to_video` / `image_to_video` / `video_edit`）；未暴露时必须省略。
+- `parameters.draftMode=true` 生成低成本 480p 样片，**必须同时显式传 `parameters.resolution` 为 capability 枚举中的 480 值**（按枚举类型传 number 或 string）；缺省或其他分辨率返回 `PARAMETER_VALIDATION_FAILED`（`parameters.resolution`）。
+- 若 480 是仅为样片追加的枚举值，未开 `draftMode` 时传 480 会被拒绝。
+- 不支持与 `omniReferenceTaskType=extend` 组合。
+- 仅在用户要求样片 / 低成本预览，或计划明确先出样片再定稿时开启；不要默认开启。样片升级 1080p 目前只能在画布网页内完成。
+
+**关于 Topview T1**
+
+- 用户指定 Topview T1，或选中 capability 的 `model` 为 `topview-t1` 时，按该 capability 提交文生视频、图生视频或视频编辑。完整语义见 `$operate-topview-canvas` `references/topview-t1.md`，实时枚举优先。
+- 分辨率只用 capability 暴露的 `720` / `1080`。不要传 `480`、`draftMode`、`internetSearch`。
+- 图生视频不传 `aspectRatio`。文生视频和视频编辑才传 capability 暴露的比例，时长用 `-1`（智能时长）或 capability 中的 `4–30` 秒。
+- 未暴露 `omniReferenceTaskType` 时必须省略。不要把参考视频改写成 Seedance 的 `edit` / `extend`。
+
 #### Legacy（临时兼容，Skill 勿用）
 
 必填：`nodeId`, `toolType`；且 `capabilityVersion` / `taskType` / `inputs` 为 null。可带 `sourceNodeIds`。

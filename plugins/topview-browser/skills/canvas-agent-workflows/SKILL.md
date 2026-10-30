@@ -43,6 +43,7 @@ Never route these requests to standalone `topview_generate_image`, `topview_gene
 
 - `$operate-topview-canvas` `references/generation-planning.md` + [references/duration-and-task-assembly.md](references/duration-and-task-assembly.md) — before freezing paid task counts / duration splits.
 - `$operate-topview-canvas` `references/seedance-2.5.md` — when the selected exact live video model is Seedance 2.5; lock `auto` / `edit` / `extend` intent before prompt authoring or submits.
+- `$operate-topview-canvas` `references/topview-t1.md` — when the user names Topview T1 or the selected exact live video model is `topview-t1`; submit that capability and do not copy Seedance-only parameters.
 - [references/reference-resolution.md](references/reference-resolution.md) — before any consistency-critical typed `inputs[]` submit (except `scene_storyboard`, which uses `sceneNodeId`).
 - `$operate-topview-canvas` `references/local-media-bridge.md` — when inputs come from local files / FFmpeg artifacts.
 - [references/orchestration-runtime.md](references/orchestration-runtime.md) — multi-stage auto-continue / partial-fail boundaries.

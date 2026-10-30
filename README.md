@@ -27,4 +27,4 @@ Paste this into a local Hermes session:
 Read https://github.com/topviewai/plugins/blob/main/docs/hermes.md completely, then install and enable Topview in this local Hermes Agent. Use the documented `hermes config set --force` command to merge the exact bundled MCP configuration without changing my other settings; do not try to edit `config.yaml` with a file-writing tool. Complete Topview OAuth with me, verify the MCP connection, and tell me to start a new session. Do not claim success until the read-only verification in that new session succeeds.
 ```
 
-Product home: https://www.topview.ai
+Product home: https://www.topview.ai/home

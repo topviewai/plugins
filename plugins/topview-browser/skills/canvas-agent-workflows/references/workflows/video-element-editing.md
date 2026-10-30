@@ -18,7 +18,7 @@ Clarify the source-role → target-role mapping and collect durable target image
 
 Lock the exact planned resolution from the selected capability before the first paid submit and show it in the plan/approval summary. Never copy a resolution from an example or silently substitute an unsupported default.
 
-Prefer a compatible Seedance 2.5 capability because it can edit from the source video directly. An explicit available user model choice wins; if the user chooses another model, explain the recommendation once and honor the choice. Seedance fast editing requires advertised `omniReferenceTaskType=edit` plus `reference_video`. If either is absent, do not paid-probe or submit as `auto`: use the legacy path with a compatible model only when permitted, otherwise return `partial`.
+Prefer a compatible Seedance 2.5 capability because it can edit from the source video directly. An explicit available user model choice wins; if the user chooses another model, explain the recommendation once and honor the choice. When that choice is Topview T1, read `$operate-topview-canvas` `references/topview-t1.md` and submit the live `topview-t1` `video_edit` capability with the source as `reference_video`. Do not require `omniReferenceTaskType=edit`, and do not send `draftMode` or resolution `480`. Seedance fast editing requires advertised `omniReferenceTaskType=edit` plus `reference_video`. If either is absent, do not paid-probe or submit as `auto`: use the legacy path with a compatible model only when permitted, otherwise return `partial`.
 
 ## Seedance 2.5 direct edit
 
