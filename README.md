@@ -2,7 +2,7 @@
 
 Official public plugin source for the browser-based Topview Canvas integration.
 The public listing is named **Topview** and its stable internal plugin and MCP
-identifier is `topview-browser`. The retained iframe/embed edition is private and
+identifier is `topview-browser`. This guide covers [version 1.0.6](https://github.com/topviewai/plugins/releases/tag/v1.0.6). The retained iframe/embed edition is private and
 is intentionally absent from this repository and every public marketplace.
 
 Topview lets an Agent create, organize, and edit Canvas content through MCP.

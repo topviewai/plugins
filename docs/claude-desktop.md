@@ -10,7 +10,8 @@ verify the file, but the user performs every Claude UI step and approves OAuth.
    directory. Require an exact byte count and SHA-256 match, then run
    `unzip -t` successfully.
 3. In Claude, open **Customize → Plugins → Add → Upload plugin** and select the
-   verified file. The preview must show `topview-browser`; confirm installation.
+   verified file. Confirm the plugin ID is `topview-browser` and its version matches the metadata
+   document (`1.0.6` for this release).
 4. Open **Customize → Connectors → topview-browser**, choose **Connect**, and
    complete Topview consent in the browser.
 5. Start a new conversation and ask Claude to list your Topview Canvas

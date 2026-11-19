@@ -9,7 +9,8 @@ Pick the guide for the Claude application you are using:
   claude plugin install topview-browser@topview --scope user
   ```
 
-  Run `/mcp`, authenticate `topview-browser`, and start a new session.
+  Run `claude plugin list` and verify `topview-browser@topview` is enabled at
+  version `1.0.6`. Run `/mcp`, authenticate `topview-browser`, and start a new session.
 - **Claude Desktop or Cowork**: follow [claude-desktop.md](claude-desktop.md).
   The Desktop app cannot run the commands above; it installs a verified
   `.plugin` file from the GitHub Release.
