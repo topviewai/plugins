@@ -1,7 +1,8 @@
 # Install Topview in Grok Bot
 
-Grok Bot uses the Cursor Marketplace and the same Cursor account. Install the
-approved Cursor Marketplace entry named **Topview**, complete MCP OAuth, and
+Grok Bot uses the Cursor Marketplace and the same Cursor account. If your
+marketplace offers **Topview**, verify its ID is `topview-browser` and its version
+is `1.0.6` before installing. Then complete MCP OAuth and
 start a new Bot conversation so the new Skills and tool definitions are loaded.
 
 Ask Grok Bot to list your Topview Canvas projects before doing any paid
