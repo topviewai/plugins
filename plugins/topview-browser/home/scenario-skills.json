@@ -1,0 +1,213 @@
+{
+  "checkedAt": "2026-10-20",
+  "source": "https://www.topview.ai/api/trpc/canvasSkill.listLibrary",
+  "catalogCount": 180,
+  "scenarios": {
+    "product": {
+      "default": {
+        "id": "skill-10601e923c9048c49b1eeb0a15",
+        "skillName": "custom-ecom-tvc-product-ad",
+        "name": "TVC Product Ad",
+        "source": "official",
+        "description": "Official custom skill for TVC-style product advertising. Use as a content-type / ad-format enhancement on top of workflow-ecommerce-product-video when an e-commerce product video should feel like a polished TV commercial with premium lighting, controlled camera language, brand voice, and clear product payoff."
+      },
+      "alternatives": [
+        {
+          "id": "skill-5ab0beb8150249d1a0309761d7",
+          "skillName": "UGC-Ads-Video",
+          "name": "UGC Ads Video",
+          "source": "official",
+          "description": "Create natural UGC-style ads that help sell almost any ecommerce item by showing what it is, how it is used, why it is useful, and why viewers should care. Use for demos, creator reviews, lifestyle scenes, comparison videos, problem-solution ads, social proof clips, and longer multi-part ad videos."
+        },
+        {
+          "id": "skill-d388ecd3ece545198c5ff135d1",
+          "skillName": "custom-ecom-product-display",
+          "name": "Product Display Ad",
+          "source": "official",
+          "description": "Official custom skill for product-display ads. Use as a content-type / ad-format enhancement on top of workflow-ecommerce-product-video when the video should focus on sequential product details, features, materials, and functions without featuring human faces."
+        }
+      ],
+      "scope": "产品广告；格式增强需配合 ecommerce-product-video 工作流"
+    },
+    "replicate": {
+      "default": null,
+      "alternatives": [],
+      "scope": "未找到通用视频复刻技能；使用 video-replication 工作流，不以 video-recast 冒充复刻"
+    },
+    "story": {
+      "default": null,
+      "alternatives": [
+        {
+          "id": "skill-1428e6853ce649db9ad82c91ac",
+          "skillName": "immersive-handheld",
+          "name": "Immersive Handheld",
+          "source": "community",
+          "description": "For live-action narrative creation such as short videos, micro-films, and Vlogs. Upload one character image or an idea, and intelligently parse it to generate a synchronized audiovisual short film with breathing handheld movement and follow shots."
+        },
+        {
+          "id": "skill-7c8aaea315d24bd59b4f252395",
+          "skillName": "short-film-scriptwriter",
+          "name": "Short Film Scriptwriter",
+          "source": "official",
+          "description": "Use for film shorts, micro-films, emotional shorts, scene scripts, or three-act，features: writes a shootable scene script of story, characters, structure, and dialogue. Do not use for short drama, 15-second twists, first-3-seconds hooks,storyboards, or prompts."
+        }
+      ],
+      "scope": "进入影视场景库；编剧技能仅负责脚本"
+    },
+    "social": {
+      "default": {
+        "id": "skill-2227fc5f0446401cae1b2862fa",
+        "skillName": "Talking -Head-Video",
+        "name": "Talking Head Video",
+        "source": "official",
+        "description": "Create presenter-style talking-head videos from scripts, monologues, explainers, lessons, reviews, or sales messages. Use when spoken content needs natural delivery, believable scene design, and consistent visuals across any requested length."
+      },
+      "alternatives": [
+        {
+          "id": "skill-66f29889e09c42099a836e0a7a",
+          "skillName": "Interview Talking Video Toolkit",
+          "name": "Interview Talking Video Toolkit",
+          "source": "official",
+          "description": "Professional guideline for IP interview, dialogue and Q&A videos. Focus on interactive sense, natural conversation rhythm, real communication state and immersive interview atmosphere. Adaptable to all lengths and platforms, free creative structure."
+        },
+        {
+          "id": "skill-4dd8b0f917be4f619ab0f4a8c5",
+          "skillName": "Daily Vlog Talking Video Toolkit",
+          "name": "Daily Vlog Talking Video Toolkit",
+          "source": "official",
+          "description": "Natural daily vlog talking style guideline. Focus on UGC authenticity, casual daily texture, relaxed on-camera state and real life atmosphere. Suitable for life record, daily sharing and casual talking vlog content."
+        }
+      ],
+      "scope": "当前封面为口播场景；其他社媒类型按内容另选"
+    },
+    "image": {
+      "default": null,
+      "alternatives": [
+        {
+          "id": "skill-32a400362e8e4973bf09db98e7",
+          "skillName": "E-Commerce-Product-Image",
+          "name": "E Commerce Product Image",
+          "source": "official",
+          "description": "Create commercial ecommerce product image prompts for uploaded product photos across main images, product detail visuals, PDP/A+ image sets, hero banners, landing-page key visuals, social feed images, stories/reels, video key visuals, sponsored ads, retargeting banners, email visuals, store POP, station posters, and custom promotional assets. Use when the user needs a product-centered ecommerce visual and the agent should route to the right image type, preserve product identity from supplied images, generate on-image copy when needed, and apply detail-page visual rules when the request is for a single product-detail module, PDP, A+ content, marketplace gallery, or detail-page image set."
+        },
+        {
+          "id": "skill-2cad357f625f496c8bf584f01c",
+          "skillName": "film-poster-design",
+          "name": "Film Poster Design",
+          "source": "official",
+          "description": "Turn film titles, storylines, genre keywords, character relationships, film stills,storyboards, or visual references into original film poster concepts, compositions,title designs, image prompts, and finished-image reviews. When the user requests image production, the current Topview Agent handles generation, editing, and delivery according to its actual capabilities."
+        }
+      ],
+      "scope": "未找到通用图片创作技能；商品图和电影海报只在用户选择相应用途后引用"
+    },
+    "edit": {
+      "default": {
+        "id": "skill-2f4d418d5e64425a83bf72beb7",
+        "skillName": "video-recast",
+        "name": "Video Recast",
+        "source": "official",
+        "description": "Restyle an existing video or replace its people or scenes by activating workflow-video-element-editing inside Topview Agent. Use when the user provides a source video, describes the desired visual changes, and optionally supplies reference images"
+      },
+      "alternatives": [],
+      "scope": "替换人物、场景或重塑原视频；保留原片节奏"
+    },
+    "timeline": {
+      "default": null,
+      "alternatives": [
+        {
+          "id": "skill-e611697f479443368cb7bb6d2e",
+          "skillName": "Live Stream Clip Talking Video Toolkit",
+          "name": "Live Stream Clip Talking Video Toolkit",
+          "source": "official",
+          "description": "Standard guideline for live stream clipped talking videos. Retain real live atmosphere, natural impromptu speaking state and interactive sense. Adaptable for live highlight clips, Q&A excerpts and live content secondary editing."
+        }
+      ],
+      "scope": "通用素材剪辑仍使用 Timeline；直播切片仅为特定子场景"
+    },
+    "drama": {
+      "default": {
+        "id": "skill-a38210c2ec3e40158880f2d96c",
+        "skillName": "short-drama-pipeline",
+        "name": "Short Drama Pipeline",
+        "source": "community",
+        "description": "Suitable for the industrialization of script text into full-process production scenarios for short play videos. Supports a complete link from script analysis, character/scene element setting, storyboard design, video generation to timeline synthesis; model selection follows the Agent default routing unless a specific capability requires otherwise."
+      },
+      "alternatives": [
+        {
+          "id": "skill-c0a246a4d8d940eebb36955ea7",
+          "skillName": "Emotional Short Drama Creation Guide",
+          "name": "Emotional Short Drama Creation Guide",
+          "source": "official",
+          "description": "Create modular female-oriented romance drama structures, including billionaire romance, CEO romance, luxury family romance, contract marriage, arranged marriage, forbidden love, mistaken identity, hidden identity, substitute lover, mafia romance, supernatural mate bonds, emotional misunderstandings, and regret-driven relationship reversals. Use for infinite canvas story workflows where users build reusable character cards, relationship maps, conflict engines, twist cards, emotional payoff beats, dialogue cards, storyboard cards, and expandable romance arcs instead of fixed-duration scripts."
+        }
+      ],
+      "scope": "剧本到成片的制作管线；连续剧集仍需先规划多集结构和资产复用",
+      "launchPolicy": {
+        "mode": "fixed-task-context",
+        "requireUserEnabled": false,
+        "showSkillPicker": false,
+        "instruction": "Use skill: short-drama-pipeline",
+        "persistToUserLibrary": false
+      }
+    }
+  },
+  "filmLibrary": [
+    {
+      "id": "skill-2f4d418d5e64425a83bf72beb7",
+      "skillName": "video-recast",
+      "name": "Video Recast",
+      "source": "official",
+      "description": "Restyle an existing video or replace its people or scenes by activating workflow-video-element-editing inside Topview Agent. Use when the user provides a source video, describes the desired visual changes, and optionally supplies reference images"
+    },
+    {
+      "id": "skill-1428e6853ce649db9ad82c91ac",
+      "skillName": "immersive-handheld",
+      "name": "Immersive Handheld",
+      "source": "community",
+      "description": "For live-action narrative creation such as short videos, micro-films, and Vlogs. Upload one character image or an idea, and intelligently parse it to generate a synchronized audiovisual short film with breathing handheld movement and follow shots."
+    },
+    {
+      "id": "skill-9e6913d96b104c948f796fd5c7",
+      "skillName": "gta6-lifestyle",
+      "name": "Gta6 Lifestyle",
+      "source": "community",
+      "description": "This video is inspired by the official source materials released by GTA6. It includes storyboards, prompts, and visual elements that are derived from these sources. The video only uses the visual styles, urban atmosphere, shot organization, and character types found in the official source materials. It does not recreate any of the official shots, logos, UI elements, trademarks, license plates, or specific dialogue lines."
+    },
+    {
+      "id": "skill-d79fa582293b4993b37e059556",
+      "skillName": "nineties-magical-girl",
+      "name": "Nineties Magical Girl",
+      "source": "community",
+      "description": "Specially designed for creating magical girl animations in the 90s style, with hand-drawn cel-shading graphics and a beauty-girl-like appearance."
+    },
+    {
+      "id": "skill-bdc5d1bd527342dd8bf93447c5",
+      "skillName": "pixel-memory-film",
+      "name": "Pixel Memory Film",
+      "source": "community",
+      "description": "Create emotional 16-bit pixel art memory films from user photos and stories. Transform real memories into warm nostalgic pixel-art short films with consistent characters, scenes, keyframes,and cinematic emotional storytelling."
+    },
+    {
+      "id": "skill-183be54966b94e38babc611b83",
+      "skillName": "romantic-tension",
+      "name": "Romantic Tension",
+      "source": "community",
+      "description": "There are two modes of support: 1. Complete short-form dramas with a narrative structure, featuring high-visual-impact romantic tension moments within the story’s beats. 2. Purely ambiguous segments that don’t require a complete story; they focus on intense sensory tension, ambiguous interactions, or emotional moments. These segments are suitable for attention-grabbing clips, opening scenes, or standalone ambient videos. Use the current available video-generation model and follow the user-specified resolution or the model's default resolution when unspecified."
+    },
+    {
+      "id": "skill-c3fe7aedddbb4829b00c0196af",
+      "skillName": "backrooms-dreamcore",
+      "name": "Backrooms Dreamcore",
+      "source": "community",
+      "description": "This skill is used when users want to create “my backroom / dreamcore test / turn a character or scene into a backroom / generate a custom alternate reality”. The core output is a personalized backroom creation: **reference image + 4 immersive answers + Backrooms Level 0 syntax**. Ultimately, it can produce spatial file cards, AI-generated images, optional BGM, and continue generating images or videos according to the user’s requirements."
+    },
+    {
+      "id": "skill-71b2bbeca18e41369333ec35cd",
+      "skillName": "h3-fps-studio",
+      "name": "H3 Fps Studio",
+      "source": "community",
+      "description": "Used for creating FPS game real-time framestyle videos with a first-person perspective. Simulates players holding weapons and moving around in the game world, observing and firing. Generated using MiniMax H3."
+    }
+  ],
+  "integration": "已核对真实条目；原型携带引用元数据，不代表已创建项目或执行技能。剧集入口固定注入任务级 short-drama-pipeline，不查询或修改个人技能启用状态；服务端仍须验证技能可用及账户授权。其他场景依各自入口策略处理。"
+}

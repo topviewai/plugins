@@ -68,7 +68,7 @@ Read the installed
 preserving every unrelated setting. The equivalent command for this release is:
 
 ```bash
-hermes config set --force mcp_servers.topview-browser '{"url":"https://mcp-browser.topview.ai","auth":"oauth","enabled":true,"headers":{"X-Topview-Plugin-Version":"1.0.5","X-Topview-Plugin-Client":"hermes"}}'
+hermes config set --force mcp_servers.topview-browser '{"url":"https://mcp-browser.topview.ai","auth":"oauth","enabled":true,"headers":{"X-Topview-Plugin-Version":"1.0.6","X-Topview-Plugin-Client":"hermes"}}'
 hermes mcp login topview-browser
 hermes mcp test topview-browser
 ```

@@ -1,13 +1,13 @@
 {
   "name": "topview-browser",
   "displayName": "Topview",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Browser-native Topview Canvas for Grok Bot and other agents with an integrated browser.",
   "author": {
     "name": "Topview"
   },
   "repository": "https://github.com/topviewai/plugins",
-  "homepage": "https://www.topview.ai/home",
+  "homepage": "https://www.topview.ai",
   "keywords": [
     "topview",
     "topviewai",

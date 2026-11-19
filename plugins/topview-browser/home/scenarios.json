@@ -1,0 +1,225 @@
+[
+  {
+    "id": "product",
+    "group": "create",
+    "name": "scenes.product.name",
+    "desc": "scenes.product.desc",
+    "art": "product-art",
+    "skill": "canvas-agent-workflows",
+    "route": "ecommerce-product-video",
+    "prompt": "scenes.product.prompt",
+    "reply": "scenes.product.reply",
+    "hint": "scenes.product.hint"
+  },
+  {
+    "id": "replicate",
+    "group": "create",
+    "name": "scenes.replicate.name",
+    "desc": "scenes.replicate.desc",
+    "type": "replicate",
+    "skill": "canvas-agent-workflows",
+    "route": "video-replication",
+    "prompt": "scenes.replicate.prompt",
+    "reply": "scenes.replicate.reply",
+    "hint": "scenes.replicate.hint"
+  },
+  {
+    "id": "story",
+    "gallery": "film",
+    "group": "create",
+    "name": "scenes.story.name",
+    "desc": "scenes.story.desc",
+    "cover": [
+      522,
+      90
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.story.prompt",
+    "reply": "scenes.story.reply",
+    "hint": "scenes.story.hint"
+  },
+  {
+    "id": "social",
+    "group": "create",
+    "name": "scenes.social.name",
+    "desc": "scenes.social.desc",
+    "type": "social",
+    "skill": "canvas-agent-workflows",
+    "route": "social-media-video",
+    "prompt": "scenes.social.prompt",
+    "reply": "scenes.social.reply",
+    "hint": "scenes.social.hint"
+  },
+  {
+    "id": "image",
+    "group": "create",
+    "name": "scenes.image.name",
+    "desc": "scenes.image.desc",
+    "type": "image",
+    "skill": "canvas-agent-workflows",
+    "route": "direct-generation",
+    "prompt": "scenes.image.prompt",
+    "reply": "scenes.image.reply",
+    "hint": "scenes.image.hint"
+  },
+  {
+    "id": "edit",
+    "group": "create",
+    "name": "scenes.edit.name",
+    "desc": "scenes.edit.desc",
+    "type": "edit",
+    "skill": "canvas-agent-workflows",
+    "route": "video-element-editing",
+    "prompt": "scenes.edit.prompt",
+    "reply": "scenes.edit.reply",
+    "hint": "scenes.edit.hint"
+  },
+  {
+    "id": "timeline",
+    "group": "create",
+    "name": "scenes.timeline.name",
+    "desc": "scenes.timeline.desc",
+    "type": "timeline",
+    "skill": "operate-topview-canvas",
+    "route": "timeline-export",
+    "prompt": "scenes.timeline.prompt",
+    "reply": "scenes.timeline.reply",
+    "hint": "scenes.timeline.hint"
+  },
+  {
+    "id": "drama",
+    "group": "create",
+    "name": "scenes.drama.name",
+    "desc": "scenes.drama.desc",
+    "cover": [
+      1536,
+      90
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.drama.prompt",
+    "reply": "scenes.drama.reply",
+    "hint": "scenes.drama.hint"
+  },
+  {
+    "id": "film-recast",
+    "group": "film",
+    "name": "scenes.film-recast.name",
+    "desc": "scenes.film-recast.desc",
+    "cover": [
+      14,
+      90
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "video-element-editing",
+    "prompt": "scenes.film-recast.prompt",
+    "reply": "scenes.film-recast.reply",
+    "hint": "scenes.film-recast.hint"
+  },
+  {
+    "id": "film-handheld",
+    "group": "film",
+    "name": "scenes.film-handheld.name",
+    "desc": "scenes.film-handheld.desc",
+    "cover": [
+      522,
+      90
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.film-handheld.prompt",
+    "reply": "scenes.film-handheld.reply",
+    "hint": "scenes.film-handheld.hint"
+  },
+  {
+    "id": "film-gta",
+    "group": "film",
+    "name": "scenes.film-gta.name",
+    "desc": "scenes.film-gta.desc",
+    "cover": [
+      1029,
+      90
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.film-gta.prompt",
+    "reply": "scenes.film-gta.reply",
+    "hint": "scenes.film-gta.hint"
+  },
+  {
+    "id": "film-magical",
+    "group": "film",
+    "name": "scenes.film-magical.name",
+    "desc": "scenes.film-magical.desc",
+    "cover": [
+      1536,
+      90
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.film-magical.prompt",
+    "reply": "scenes.film-magical.reply",
+    "hint": "scenes.film-magical.hint"
+  },
+  {
+    "id": "film-pixel",
+    "group": "film",
+    "name": "scenes.film-pixel.name",
+    "desc": "scenes.film-pixel.desc",
+    "cover": [
+      14,
+      547
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.film-pixel.prompt",
+    "reply": "scenes.film-pixel.reply",
+    "hint": "scenes.film-pixel.hint"
+  },
+  {
+    "id": "film-romantic",
+    "group": "film",
+    "name": "scenes.film-romantic.name",
+    "desc": "scenes.film-romantic.desc",
+    "cover": [
+      522,
+      547
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.film-romantic.prompt",
+    "reply": "scenes.film-romantic.reply",
+    "hint": "scenes.film-romantic.hint"
+  },
+  {
+    "id": "film-backrooms",
+    "group": "film",
+    "name": "scenes.film-backrooms.name",
+    "desc": "scenes.film-backrooms.desc",
+    "cover": [
+      1029,
+      547
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.film-backrooms.prompt",
+    "reply": "scenes.film-backrooms.reply",
+    "hint": "scenes.film-backrooms.hint"
+  },
+  {
+    "id": "film-fps",
+    "group": "film",
+    "name": "scenes.film-fps.name",
+    "desc": "scenes.film-fps.desc",
+    "cover": [
+      1536,
+      547
+    ],
+    "skill": "canvas-agent-workflows",
+    "route": "short-film",
+    "prompt": "scenes.film-fps.prompt",
+    "reply": "scenes.film-fps.reply",
+    "hint": "scenes.film-fps.hint"
+  }
+]

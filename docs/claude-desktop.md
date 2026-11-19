@@ -31,7 +31,7 @@ a managed MCP server in that deployment's configuration:
   "url": "https://mcp-browser.topview.ai",
   "oauth": { "mode": "dcr" },
   "headers": {
-    "X-Topview-Plugin-Version": "1.0.5",
+    "X-Topview-Plugin-Version": "1.0.6",
     "X-Topview-Plugin-Client": "claude"
   }
 }
